@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+
+  <!-- Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .card img {
+      transition: transform 0.3s ease;
+    }
+    .card:hover img {
+      transform: scale(1.05);
+    }
+    .btn i {
+      transition: transform 0.3s ease;
+    }
+    .btn:hover i {
+      transform: scale(1.2);
+    }
+    .share-feedback {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #198754;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: none;
+      z-index: 9999;
+    }
+    .skeleton {
+      background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.2s infinite;
+      border-radius: 10px;
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-primary text-white text-center p-4 position-relative">
+    <h1>Product Details</h1>
+    <nav class="mt-3">
+      <a href="index.html" class="text-white me-3 text-decoration-none">Home</a>
+      <a href="products.html" class="text-white me-3 text-decoration-none">Products</a>
+      <a href="about.html" class="text-white text-decoration-none">About</a>
+    </nav>
+    <button id="toggleThemeBtn" class="btn btn-light position-absolute top-0 end-0 m-3">
+      <i id="themeIcon" class="bi bi-moon"></i>
+    </button>
+  </header>
+
+  <!-- Product Detail Section -->
+  <main class="container my-5">
+    <section id="product-detail" class="row g-4 align-items-center">
+      <!-- Skeleton Loader -->
+      <div class="col-md-6 skeleton" style="height: 300px;"></div>
+      <div class="col-md-6">
+        <div class="skeleton mb-3" style="height: 30px; width: 80%;"></div>
+        <div class="skeleton mb-3" style="height: 20px; width: 50%;"></div>
+        <div class="skeleton mb-3" style="height: 80px; width: 100%;"></div>
+        <div class="skeleton" style="height: 40px; width: 30%;"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Share Feedback -->
+  <div class="share-feedback" id="share-feedback">Link copied!</div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 border-top">
+    <p>
+      <a id="whatsapp-link" href="#" class="text-decoration-none">
+        <i class="bi bi-whatsapp"></i> Contact us on WhatsApp
+      </a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+   <script>// Sample product list (you should keep this consistent with your products on products page)
+const products = [
+  {
+    id: 1,
+    name: "Wireless Headphones",
+    category: "tech",
+    price: 59.99,
+    description: "High-quality wireless headphones with noise-cancellation.",
+    image: "images/products/WirelessHeadphones.jpg",
+    whatsapp: "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Wireless%20Headphones"
+  },
+  {
+    id: 2,
+    name: "Smart Watch",
+    category: "tech",
+    price: 129.99,
+    description: "Stylish smart watch with fitness tracking and notifications.",
+    image: "images/products/smartwatch.jpg",
+    whatsapp: "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Smart%20Watch"
+  },
+  // Add other products here...
+];
+
+// Helper: Get query param by name
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+function loadProduct() {
+  const productId = parseInt(getQueryParam('id'));
+  const product = products.find(p => p.id === productId);
+
+  const container = document.getElementById('product-detail');
+  const whatsappLink = document.getElementById('whatsapp-link');
+
+  if (!product) {
+    container.innerHTML = `<p class="text-danger">Product not found.</p>`;
+    whatsappLink.style.display = 'none';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="col-md-6">
+      <img src="${product.image}" alt="${product.name}" class="img-fluid rounded shadow" />
+    </div>
+    <div class="col-md-6">
+      <h2>${product.name}</h2>
+      <p class="text-muted">${product.category}</p>
+      <h4 class="text-success mb-3">$${product.price.toFixed(2)}</h4>
+      <p>${product.description}</p>
+      <a href="${product.whatsapp}" target="_blank" class="btn btn-success">
+        <i class="bi bi-whatsapp"></i> Contact us on WhatsApp
+      </a>
+    </div>
+  `;
+
+  // Update WhatsApp footer link as well
+  whatsappLink.href = product.whatsapp;
+  whatsappLink.style.display = 'inline-block';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadProduct();
+
+  // Theme toggle logic (optional, copy from your other pages)
+  const toggleBtn = document.getElementById('toggleThemeBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const htmlTag = document.documentElement;
+
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  htmlTag.setAttribute('data-bs-theme', savedTheme);
+  themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+
+  toggleBtn.addEventListener('click', () => {
+    const currentTheme = htmlTag.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    htmlTag.setAttribute('data-bs-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    themeIcon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+  });
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

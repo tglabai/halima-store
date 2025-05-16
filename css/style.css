@@ -1,0 +1,175 @@
+ /* === Base Styling === */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* === Header === */
+header {
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* === Product Grid === */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* === Product Detail Page === */
+#product-detail img {
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* === Search Bar === */
+#search {
+  padding: 1rem;
+  text-align: center;
+}
+
+#search input {
+  max-width: 400px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* === Categories === */
+#categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.category-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #dee2e6;
+  cursor: pointer;
+}
+
+.category-btn.active {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* === Footer === */
+footer {
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* === Bootstrap Theme: Light === */
+[data-bs-theme="light"] {
+  --bs-body-bg: #f8f9fa;
+  --bs-body-color: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="light"] header,
+[data-bs-theme="light"] footer {
+  background-color: #343a40;
+  color: white;
+}
+
+[data-bs-theme="light"] a {
+  color: #0d6efd;
+}
+
+[data-bs-theme="light"] .card,
+[data-bs-theme="light"] .product-card {
+  background-color: #ffffff;
+  color: #212529;
+  border-color: #ddd;
+}
+
+/* === Bootstrap Theme: Dark === */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #adb5bd;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] header,
+[data-bs-theme="dark"] footer {
+  background-color: #1f1f1f !important;
+  color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] a {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .product-card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border-color: #333;
+}
+
+/* === Theme Toggle Button === */
+#toggleThemeBtn {
+  z-index: 10;
+}
+
+.typing-cursor {
+  display: inline-block;
+  animation: blink 0.7s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+} 
