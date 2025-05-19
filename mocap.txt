@@ -1,0 +1,6 @@
+Main pages: Home, Products, About
+Second pages: Product page
+Contact: Product ref to Whatsapp app
+Home: banner with products, breef introduction, store photo, location, top selling products, social media
+Products: All products, categories, seach bar
+About: introduction, owner, location, history, contact
