@@ -88,27 +88,128 @@
 
   <!-- Scripts -->
    <script>// Sample product list (you should keep this consistent with your products on products page)
-const products = [
+const products =[
   {
-    id: 1,
-    name: "Wireless Headphones",
-    category: "tech",
-    price: 59.99,
-    description: "High-quality wireless headphones with noise-cancellation.",
-    image: "images/products/WirelessHeadphones.jpg",
-    whatsapp: "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Wireless%20Headphones"
+    "id": 1,
+    "name": "Wireless Headphones",
+    "category": "tech",
+    "price": 59.99,
+    "description": "High-quality wireless headphones with noise-cancellation.",
+    "image": "images/products/WirelessHeadphones.jpg",
+    "whatsapp": "https://wa.me/1234567890?"
   },
   {
-    id: 2,
-    name: "Smart Watch",
-    category: "tech",
-    price: 129.99,
-    description: "Stylish smart watch with fitness tracking and notifications.",
-    image: "images/products/smartwatch.jpg",
-    whatsapp: "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Smart%20Watch"
+    "id": 2,
+    "name": "Smart Watch",
+    "category": "tech",
+    "price": 129.99,
+    "description": "Stylish smart watch with fitness tracking and notifications.",
+    "image": "images/products/smartwatch.jpg",
+    "whatsapp":"https://wa.me/1234567890?"
+   },
+
+  {
+    "id": 5,
+    "name": "Bluetooth Speaker",
+    "category": "tech",
+    "price": 39.99,
+    "description": "Portable speaker with powerful sound and long battery life.",
+    "image": "images/products/speaker.jpg",
+    "whatsapp":"https://wa.me/1234567890?"
+   },
+  {
+    "id": 21,
+    "name": "Wireless Charging Pad",
+    "description": "Fast wireless charger compatible with all Qi-enabled devices.",
+    "price": 79.99,
+    "category": "tech",
+    "image": "images/products/wireless-charger.jpg",
+    "whatsapp":"https://wa.me/1234567890?"
+   },
+  {
+    "id": 22,
+    "name": "Anti-Spy Screen Protector",
+    "description": "Privacy screen protector for iPhone and Android devices.",
+    "price": 39.99,
+    "category": "tech",
+    "image": "images/products/anti-spy-protector.jpg",
+    "whatsapp":"https://wa.me/1234567890?"
+   },
+  {
+    "id": 23,
+    "name": "Bluetooth Game Controller",
+    "description": "Compatible with Android, iOS, and PC for mobile gaming.",
+    "price": 149.00,
+    "category": "tech",
+    "image": "images/products/game-controller.jpg",
+    "whatsapp":"https://wa.me/1234567890?"
+   },
+  {
+    "id": 24,
+    "name": "USB-C Fast Charging Cable",
+    "description": "1.5m nylon braided cable for quick charging.",
+    "price": 29.90,
+    "category": "tech",
+    "image": "images/products/usb-c-cable.jpg",
+    "whatsapp":"https://wa.me/1234567890?"
   },
-  // Add other products here...
-];
+  {
+    "id": 25,
+    "name": "RGB Mouse Pad XL",
+    "description": "Extended mouse pad with customizable lighting.",
+    "price": 89.00,
+    "category": "tech",
+    "image": "images/products/rgb-mousepad.jpg",
+    "whatsapp": "https://wa.me/1234567890?"
+   },
+  {
+    "id": 26,
+    "name": "Silicone iPhone 14 Case",
+    "description": "Shockproof silicone case available in multiple colors.",
+    "price": 59.90,
+    "category": "fashion",
+    "image": "images/products/iphone14-case.jpg",
+    "whatsapp":"https://wa.me/1234567890?"
+  },
+  {
+    "id": 27,
+    "name": "Smartwatch Series 8 Clone",
+    "description": "Affordable smartwatch with fitness tracking features.",
+    "price": 199.00,
+    "category": "tech",
+    "image": "images/products/smartwatch-clone.jpg",
+    "whatsapp": "https://wa.me/1234567890?"
+   },
+  {
+    "id": 28,
+    "name": "Portable Bluetooth Speaker",
+    "description": "Waterproof, wireless, with deep bass sound.",
+    "price": 129.90,
+    "category": "tech",
+    "image": "images/products/bluetooth-speaker.jpg",
+    "whatsapp": "https://wa.me/1234567890?"
+   },
+  {
+    "id": 29,
+    "name": "Foldable Phone Stand",
+    "description": "Adjustable angle stand for desk or travel use.",
+    "price": 24.90,
+    "category": "tech",
+    "image": "images/products/phone-stand.jpg",
+    "whatsapp": "https://wa.me/1234567890?"
+  },
+  {
+    "id": 30,
+    "name": "Ergonomic Wireless Mouse",
+    "description": "Rechargeable mouse designed for all-day comfort.",
+    "price": 89.00,
+    "category": "tech",
+    "image": "images/products/wireless-mouse.jpg",
+    "whatsapp": "https://wa.me/1234567890?"
+  }
+]
+
+;
 
 // Helper: Get query param by name
 function getQueryParam(param) {

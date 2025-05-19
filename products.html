@@ -30,6 +30,7 @@
       <i id="themeIcon" class="bi bi-moon"></i>
     </button>
   </header>
+  
 
   <main class="container my-5">
     <!-- Filters -->
@@ -70,6 +71,7 @@
     </p>
   </footer>
 
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Theme Toggle Script -->
@@ -92,46 +94,124 @@
   </script>
 
   <script>
-    // Example product list: add your full product list here or fetch from JSON file
-    const products = [
-      {
-        "id": 1,
-        "name": "Wireless Headphones",
-        "category": "tech",
-        "price": 59.99,
-        "description": "High-quality wireless headphones with noise-cancellation.",
-        "image": "images/products/WirelessHeadphones.jpg",
-        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Wireless%20Headphones"
-      },
-      {
-        "id": 2,
-        "name": "Smart Watch",
-        "category": "tech",
-        "price": 129.99,
-        "description": "Stylish smart watch with fitness tracking and notifications.",
-        "image": "images/products/smartwatch.jpg",
-        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Smart%20Watch"
-      },
-      {
-        "id": 3,
-        "name": "Bluetooth Speaker",
-        "category": "tech",
-        "price": 39.99,
-        "description": "Portable speaker with powerful sound and long battery life.",
-        "image": "images/products/speaker.jpg",
-        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Bluetooth%20Speaker"
-      },
-      {
-        "id": 26,
-        "name": "Silicone iPhone 14 Case",
-        "category": "fashion",
-        "price": 59.90,
-        "description": "Shockproof silicone case available in multiple colors.",
-        "image": "images/products/iphone14-case.jpg",
-        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Silicone%20iPhone%2014%20Case"
-      }
-      // Add all your products here
-    ];
+    const products =
+     [
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "category": "tech",
+    "price": 59.99,
+    "description": "High-quality wireless headphones with noise-cancellation.",
+    "image": "images/products/WirelessHeadphones.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "category": "tech",
+    "price": 129.99,
+    "description": "Stylish smart watch with fitness tracking and notifications.",
+    "image": "images/products/smartwatch.jpg"
+  },
+
+  {
+    "id": 5,
+    "name": "Bluetooth Speaker",
+    "category": "tech",
+    "price": 39.99,
+    "description": "Portable speaker with powerful sound and long battery life.",
+    "image": "images/products/speaker.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Wireless Charging Pad",
+    "description": "Fast wireless charger compatible with all Qi-enabled devices.",
+    "price": 79.99,
+    "category": "tech",
+    "image": "images/products/wireless-charger.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Wireless%20Charging%20Pad"
+  },
+  {
+    "id": 22,
+    "name": "Anti-Spy Screen Protector",
+    "description": "Privacy screen protector for iPhone and Android devices.",
+    "price": 39.99,
+    "category": "tech",
+    "image": "images/products/anti-spy-protector.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Anti-Spy%20Screen%20Protector"
+  },
+  {
+    "id": 23,
+    "name": "Bluetooth Game Controller",
+    "description": "Compatible with Android, iOS, and PC for mobile gaming.",
+    "price": 149.00,
+    "category": "tech",
+    "image": "images/products/game-controller.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Bluetooth%20Game%20Controller"
+  },
+  {
+    "id": 24,
+    "name": "USB-C Fast Charging Cable",
+    "description": "1.5m nylon braided cable for quick charging.",
+    "price": 29.90,
+    "category": "tech",
+    "image": "images/products/usb-c-cable.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20USB-C%20Fast%20Charging%20Cable"
+  },
+  {
+    "id": 25,
+    "name": "RGB Mouse Pad XL",
+    "description": "Extended mouse pad with customizable lighting.",
+    "price": 89.00,
+    "category": "tech",
+    "image": "images/products/rgb-mousepad.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20RGB%20Mouse%20Pad%20XL"
+  },
+  {
+    "id": 26,
+    "name": "Silicone iPhone 14 Case",
+    "description": "Shockproof silicone case available in multiple colors.",
+    "price": 59.90,
+    "category": "fashion",
+    "image": "images/products/iphone14-case.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Silicone%20iPhone%2014%20Case"
+  },
+  {
+    "id": 27,
+    "name": "Smartwatch Series 8 Clone",
+    "description": "Affordable smartwatch with fitness tracking features.",
+    "price": 199.00,
+    "category": "tech",
+    "image": "images/products/smartwatch-clone.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Smartwatch%20Series%208%20Clone"
+  },
+  {
+    "id": 28,
+    "name": "Portable Bluetooth Speaker",
+    "description": "Waterproof, wireless, with deep bass sound.",
+    "price": 129.90,
+    "category": "tech",
+    "image": "images/products/bluetooth-speaker.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Portable%20Bluetooth%20Speaker"
+  },
+  {
+    "id": 29,
+    "name": "Foldable Phone Stand",
+    "description": "Adjustable angle stand for desk or travel use.",
+    "price": 24.90,
+    "category": "tech",
+    "image": "images/products/phone-stand.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Foldable%20Phone%20Stand"
+  },
+  {
+    "id": 30,
+    "name": "Ergonomic Wireless Mouse",
+    "description": "Rechargeable mouse designed for all-day comfort.",
+    "price": 89.00,
+    "category": "tech",
+    "image": "images/products/wireless-mouse.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Ergonomic%20Wireless%20Mouse"
+  }
+];
 
     const productsGrid = document.getElementById('productsGrid');
     const loadingSpinner = document.getElementById('loadingSpinner');
@@ -174,15 +254,12 @@
       price.textContent = `€${product.price.toFixed(2)}`;
       cardBody.appendChild(price);
 
-      if (product.whatsapp) {
-        const waLink = document.createElement('a');
-        waLink.href = product.whatsapp;
-        waLink.target = '_blank';
-        waLink.rel = 'noopener noreferrer';
-        waLink.className = 'btn btn-success w-100 mt-2';
-        waLink.innerHTML = '<i class="bi bi-whatsapp"></i> Contact via WhatsApp';
-        cardBody.appendChild(waLink);
-      }
+      // New: View Details button instead of WhatsApp
+      const detailsLink = document.createElement('a');
+      detailsLink.href = `product.html?id=${product.id}`;
+      detailsLink.className = 'btn btn-primary w-100 mt-2';
+      detailsLink.textContent = 'View Details';
+      cardBody.appendChild(detailsLink);
 
       card.appendChild(cardBody);
       col.appendChild(card);
@@ -218,7 +295,6 @@
 
       if (pageCount <= 1) return;
 
-      // Previous button
       const prevLi = document.createElement('li');
       prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
       prevLi.innerHTML = `<a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>`;
@@ -231,7 +307,6 @@
       });
       pagination.appendChild(prevLi);
 
-      // Page numbers
       for (let i = 1; i <= pageCount; i++) {
         const li = document.createElement('li');
         li.className = `page-item ${i === currentPage ? 'active' : ''}`;
@@ -244,7 +319,6 @@
         pagination.appendChild(li);
       }
 
-      // Next button
       const nextLi = document.createElement('li');
       nextLi.className = `page-item ${currentPage === pageCount ? 'disabled' : ''}`;
       nextLi.innerHTML = `<a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>`;

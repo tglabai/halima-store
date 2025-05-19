@@ -159,7 +159,7 @@ footer {
 }
 
 /* === Theme Toggle Button === */
-#toggleThemeBtn {
+#toggleThemeBtn { 
   z-index: 10;
 }
 
@@ -173,3 +173,7 @@ footer {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 } 
+[data-bs-theme="light"] .btn-primary {
+  color: #fff !important;
+  text-decoration: #121212;
+}
