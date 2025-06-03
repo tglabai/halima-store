@@ -80,197 +80,253 @@
   <!-- Footer -->
   <footer class="text-center py-3 border-top">
     <p>
-      <a id="whatsapp-link" href="#" class="text-decoration-none">
+      <a id="whatsapp-link" href="#" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-whatsapp"></i> Contact us on WhatsApp
       </a>
     </p>
   </footer>
 
   <!-- Scripts -->
-   <script>// Sample product list (you should keep this consistent with your products on products page)
-const products =[
-  {
+  <script>
+    // Sample product list (keep consistent with your products on products page)
+    const products = [
+   {
     "id": 1,
-    "name": "Wireless Headphones",
+    "name": "AirPods",
+    "description": "Écouteurs sans fil avec qualité sonore exceptionnelle.",
+    "price": 159.90,
     "category": "tech",
-    "price": 59.99,
-    "description": "High-quality wireless headphones with noise-cancellation.",
-    "image": "images/products/WirelessHeadphones.jpg",
-    "whatsapp": "https://wa.me/1234567890?"
+    "images": ["images/products/airpods.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20les%20AirPods"
   },
   {
     "id": 2,
-    "name": "Smart Watch",
+    "name": "JBL Flip 6",
+    "description": "Enceinte Bluetooth portable avec basses puissantes.",
+    "price": 149.90,
     "category": "tech",
-    "price": 129.99,
-    "description": "Stylish smart watch with fitness tracking and notifications.",
-    "image": "images/products/smartwatch.jpg",
-    "whatsapp":"https://wa.me/1234567890?"
-   },
-
-  {
-    "id": 5,
-    "name": "Bluetooth Speaker",
-    "category": "tech",
-    "price": 39.99,
-    "description": "Portable speaker with powerful sound and long battery life.",
-    "image": "images/products/speaker.jpg",
-    "whatsapp":"https://wa.me/1234567890?"
-   },
-  {
-    "id": 21,
-    "name": "Wireless Charging Pad",
-    "description": "Fast wireless charger compatible with all Qi-enabled devices.",
-    "price": 79.99,
-    "category": "tech",
-    "image": "images/products/wireless-charger.jpg",
-    "whatsapp":"https://wa.me/1234567890?"
-   },
-  {
-    "id": 22,
-    "name": "Anti-Spy Screen Protector",
-    "description": "Privacy screen protector for iPhone and Android devices.",
-    "price": 39.99,
-    "category": "tech",
-    "image": "images/products/anti-spy-protector.jpg",
-    "whatsapp":"https://wa.me/1234567890?"
-   },
-  {
-    "id": 23,
-    "name": "Bluetooth Game Controller",
-    "description": "Compatible with Android, iOS, and PC for mobile gaming.",
-    "price": 149.00,
-    "category": "tech",
-    "image": "images/products/game-controller.jpg",
-    "whatsapp":"https://wa.me/1234567890?"
-   },
-  {
-    "id": 24,
-    "name": "USB-C Fast Charging Cable",
-    "description": "1.5m nylon braided cable for quick charging.",
-    "price": 29.90,
-    "category": "tech",
-    "image": "images/products/usb-c-cable.jpg",
-    "whatsapp":"https://wa.me/1234567890?"
+    "images": [
+      "images/products/jbl_flip6.jpeg",
+      "images/products/jbl_flip6(2).jpeg"
+    ],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20JBL%20Flip%206"
   },
   {
-    "id": 25,
-    "name": "RGB Mouse Pad XL",
-    "description": "Extended mouse pad with customizable lighting.",
-    "price": 89.00,
+    "id": 3,
+    "name": "Câble USB-C renforcé",
+    "description": "Câble de charge rapide, durable et flexible.",
+    "price": 19.90,
     "category": "tech",
-    "image": "images/products/rgb-mousepad.jpg",
-    "whatsapp": "https://wa.me/1234567890?"
-   },
-  {
-    "id": 26,
-    "name": "Silicone iPhone 14 Case",
-    "description": "Shockproof silicone case available in multiple colors.",
-    "price": 59.90,
-    "category": "fashion",
-    "image": "images/products/iphone14-case.jpg",
-    "whatsapp":"https://wa.me/1234567890?"
+    "images": ["images/products/cable_c_C.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C"
   },
   {
-    "id": 27,
-    "name": "Smartwatch Series 8 Clone",
-    "description": "Affordable smartwatch with fitness tracking features.",
-    "price": 199.00,
-    "category": "tech",
-    "image": "images/products/smartwatch-clone.jpg",
-    "whatsapp": "https://wa.me/1234567890?"
-   },
-  {
-    "id": 28,
-    "name": "Portable Bluetooth Speaker",
-    "description": "Waterproof, wireless, with deep bass sound.",
-    "price": 129.90,
-    "category": "tech",
-    "image": "images/products/bluetooth-speaker.jpg",
-    "whatsapp": "https://wa.me/1234567890?"
-   },
-  {
-    "id": 29,
-    "name": "Foldable Phone Stand",
-    "description": "Adjustable angle stand for desk or travel use.",
+    "id": 4,
+    "name": "Câble USB-C tressé",
+    "description": "Câble de type C avec gaine tressée anti-nœud.",
     "price": 24.90,
     "category": "tech",
-    "image": "images/products/phone-stand.jpg",
-    "whatsapp": "https://wa.me/1234567890?"
+    "images": ["images/products/cable_c_li.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C%20tressé"
   },
   {
-    "id": 30,
-    "name": "Ergonomic Wireless Mouse",
-    "description": "Rechargeable mouse designed for all-day comfort.",
-    "price": 89.00,
+    "id": 5,
+    "name": "JBL Pure Bass",
+    "description": "Écouteurs JBL avec son Pure Bass et design confortable.",
+    "price": 89.90,
     "category": "tech",
-    "image": "images/products/wireless-mouse.jpg",
-    "whatsapp": "https://wa.me/1234567890?"
+    "images": [
+      "images/products/jbl_purebass.jpeg",
+      "images/products/jbl_purebass(2).jpeg"
+    ],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20les%20JBL%20Pure%20Bass"
+  },
+  {
+    "id": 6,
+    "name": "Chargeur allume-cigare",
+    "description": "Charge rapide pour vos appareils en voiture.",
+    "price": 29.90,
+    "category": "tech",
+    "images": ["images/products/car_charger.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20chargeur%20allume-cigare"
+  },
+  {
+    "id": 7,
+    "name": "Coque A06",
+    "description": "Coque souple et élégante pour Samsung A06.",
+    "price": 34.90,
+    "category": "fashion",
+    "images": ["images/products/case_A06.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20A06"
+  },
+  {
+    "id": 8,
+    "name": "Coque A16",
+    "description": "Protection résistante pour votre Samsung A16.",
+    "price": 34.90,
+    "category": "fashion",
+    "images": [
+      "images/products/case_A16.jpeg",
+      "images/products/case_A16(2).jpeg"
+    ],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20A16"
+  },
+  {
+    "id": 9,
+    "name": "Support Ramdon",
+    "description": "Support pliable pour smartphone, pratique au quotidien.",
+    "price": 19.90,
+    "category": "tech",
+    "images": ["images/products/ramdon.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20support%20Ramdon"
+  },
+  {
+    "id": 10,
+    "name": "Support Rider",
+    "description": "Support pour vélo/moto avec fixation sécurisée.",
+    "price": 29.90,
+    "category": "tech",
+    "images": ["images/products/rider.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20support%20Rider"
+  },
+  {
+    "id": 11,
+    "name": "Coque iPhone 13 Mini",
+    "description": "Coque fine et résistante pour iPhone 13 Mini.",
+    "price": 39.90,
+    "category": "fashion",
+    "images": ["images/products/case_ip13mini.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2013%20Mini"
+  },
+  {
+    "id": 12,
+    "name": "Coque iPhone 16 Pro",
+    "description": "Protection complète avec design premium pour iPhone 16 Pro.",
+    "price": 44.90,
+    "category": "fashion",
+    "images": ["images/products/case_ip16pro.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2016%20Pro"
+  },
+  {
+    "id": 13,
+    "name": "Verre trempé (avant et arrière)",
+    "description": "Set complet de protection avant et arrière en verre trempé.",
+    "price": 14.90,
+    "category": "tech",
+    "images": [
+      "images/products/tempered_glass.jpeg",
+      "images/products/tempered_glass_back.jpeg"
+    ],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20le%20verre%20trempé%20avant%20et%20arrière"
+  },
+  {
+    "id": 14,
+    "name": "Coque Huawei P30",
+    "description": "Coque protectrice pour Huawei P30.",
+    "price": 39.90,
+    "category": "fashion",
+    "images": ["images/products/case_p30.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Huawei%20P30"
+  },
+  {
+    "id": 15,
+    "name": "Chargeur Type-C",
+    "description": "Adaptateur secteur avec port USB Type-C.",
+    "price": 29.90,
+    "category": "tech",
+    "images": ["images/products/typec-charger.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20le%20chargeur%20Type-C"
+  },
+  {
+    "id": 16,
+    "name": "Coque Galaxy Z Fold",
+    "description": "Coque renforcée pour Galaxy Z Fold, protection intégrale.",
+    "price": 49.90,
+    "category": "fashion",
+    "images": ["images/products/case_zfold.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Z%20Fold"
+  },
+  {
+    "id": 17,
+    "name": "Souris sans fil",
+    "description": "Souris ergonomique, idéale pour le bureau et les jeux.",
+    "price": 59.90,
+    "category": "tech",
+    "images": ["images/products/wireless_mouse.jpeg"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20souris%20sans%20fil"
+  },
+  {
+    "id": 18,
+    "name": "Coque Magico",
+    "description": "Coque élégante avec finition brillante.",
+    "price": 39.90,
+    "category": "fashion",
+    "images": ["images/products/case_magic6"],
+    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Magico"
   }
-]
+    ];
 
-;
+    // Helper: Get query param by name
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
 
-// Helper: Get query param by name
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
+    function loadProduct() {
+      const productId = parseInt(getQueryParam('id'));
+      const product = products.find(p => p.id === productId);
 
-function loadProduct() {
-  const productId = parseInt(getQueryParam('id'));
-  const product = products.find(p => p.id === productId);
+      const container = document.getElementById('product-detail');
+      const whatsappLink = document.getElementById('whatsapp-link');
 
-  const container = document.getElementById('product-detail');
-  const whatsappLink = document.getElementById('whatsapp-link');
+      if (!product) {
+        container.innerHTML = `<p class="text-danger">Product not found.</p>`;
+        whatsappLink.style.display = 'none';
+        return;
+      }
 
-  if (!product) {
-    container.innerHTML = `<p class="text-danger">Product not found.</p>`;
-    whatsappLink.style.display = 'none';
-    return;
-  }
+      container.innerHTML = `
+        <div class="col-md-6">
+          <img src="${product.images[0]}" alt="${product.name}" class="img-fluid rounded shadow" />
+        </div>
+        <div class="col-md-6">
+          <h2>${product.name}</h2>
+          <p class="text-muted text-capitalize">${product.category}</p>
+          <h4 class="text-success mb-3">${product.price.toFixed(2)} €</h4>
+          <p>${product.description}</p>
+          <a href="${product.whatsapp}" target="_blank" class="btn btn-success">
+            <i class="bi bi-whatsapp"></i> Contact us on WhatsApp
+          </a>
+        </div>
+      `;
 
-  container.innerHTML = `
-    <div class="col-md-6">
-      <img src="${product.image}" alt="${product.name}" class="img-fluid rounded shadow" />
-    </div>
-    <div class="col-md-6">
-      <h2>${product.name}</h2>
-      <p class="text-muted">${product.category}</p>
-      <h4 class="text-success mb-3">$${product.price.toFixed(2)}</h4>
-      <p>${product.description}</p>
-      <a href="${product.whatsapp}" target="_blank" class="btn btn-success">
-        <i class="bi bi-whatsapp"></i> Contact us on WhatsApp
-      </a>
-    </div>
-  `;
+      // Update WhatsApp footer link as well
+      whatsappLink.href = product.whatsapp;
+      whatsappLink.style.display = 'inline-block';
+    }
 
-  // Update WhatsApp footer link as well
-  whatsappLink.href = product.whatsapp;
-  whatsappLink.style.display = 'inline-block';
-}
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProduct();
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadProduct();
+      // Theme toggle logic
+      const toggleBtn = document.getElementById('toggleThemeBtn');
+      const themeIcon = document.getElementById('themeIcon');
+      const htmlTag = document.documentElement;
 
-  // Theme toggle logic (optional, copy from your other pages)
-  const toggleBtn = document.getElementById('toggleThemeBtn');
-  const themeIcon = document.getElementById('themeIcon');
-  const htmlTag = document.documentElement;
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      htmlTag.setAttribute('data-bs-theme', savedTheme);
+      themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
 
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  htmlTag.setAttribute('data-bs-theme', savedTheme);
-  themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+      toggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlTag.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        htmlTag.setAttribute('data-bs-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeIcon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+      });
+    });
+  </script>
 
-  toggleBtn.addEventListener('click', () => {
-    const currentTheme = htmlTag.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    htmlTag.setAttribute('data-bs-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    themeIcon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
-  });
-});
-</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
