@@ -1,0 +1,1149 @@
+CSS/style.css - /* === Base Styling === */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* === Header === */
+header {
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* === Product Grid === */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* === Product Detail Page === */
+#product-detail img {
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* === Search Bar === */
+#search {
+  padding: 1rem;
+  text-align: center;
+}
+
+#search input {
+  max-width: 400px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* === Categories === */
+#categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.category-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #dee2e6;
+  cursor: pointer;
+}
+
+.category-btn.active {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* === Footer === */
+footer {
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* === Bootstrap Theme: Light === */
+[data-bs-theme="light"] {
+  --bs-body-bg: #f8f9fa;
+  --bs-body-color: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="light"] header,
+[data-bs-theme="light"] footer {
+  background-color: #343a40;
+  color: white;
+}
+
+[data-bs-theme="light"] a {
+  color: #0d6efd;
+}
+
+[data-bs-theme="light"] .card,
+[data-bs-theme="light"] .product-card {
+  background-color: #ffffff;
+  color: #212529;
+  border-color: #ddd;
+}
+
+/* === Bootstrap Theme: Dark === */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #adb5bd;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] header,
+[data-bs-theme="dark"] footer {
+  background-color: #1f1f1f !important;
+  color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] a {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .product-card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border-color: #333;
+}
+
+/* === Theme Toggle Button === */
+#toggleThemeBtn {
+  z-index: 10;
+}
+
+.typing-cursor {
+  display: inline-block;
+  animation: blink 0.7s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+} - images/products/ banner01.jpeg, banner02.jpeg, banner03.jpeg, banner04.jpeg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --js/mais.js -// js/main.js
+
+let products = [];
+
+fetch('products.json')
+  .then(response => response.json())
+  .then(data => {
+    products = data;
+    if (document.getElementById('top-products-list')) renderTopProducts();
+    if (document.getElementById('product-list')) renderAllProducts();
+    if (document.getElementById('product-detail')) renderProductDetails();
+  });
+
+function renderTopProducts() {
+  const container = document.getElementById('top-products-list');
+  const top = products.slice(0, 4);
+  top.forEach(product => {
+    container.innerHTML += productCard(product);
+  });
+}
+
+function renderAllProducts() {
+  const container = document.getElementById('product-list');
+  const spinner = document.getElementById('loading-spinner');
+  const searchBar = document.getElementById('search-bar');
+  const categoryButtons = document.querySelectorAll('.category-btn');
+
+  spinner?.classList.add('d-none');
+
+  function updateList() {
+    let filtered = [...products];
+    const keyword = searchBar.value.toLowerCase();
+    const selected = document.querySelector('.category-btn.active')?.dataset.category;
+
+    if (selected && selected !== 'all') {
+      filtered = filtered.filter(p => p.category === selected);
+    }
+    if (keyword) {
+      filtered = filtered.filter(p => p.name.toLowerCase().includes(keyword));
+    }
+
+    container.innerHTML = '';
+    filtered.forEach(p => {
+      const cardWrapper = document.createElement('div');
+      cardWrapper.className = 'col-md-3';
+      cardWrapper.innerHTML = productCard(p);
+      container.appendChild(cardWrapper);
+    });
+  }
+
+  searchBar.addEventListener('input', updateList);
+  categoryButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      categoryButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateList();
+    });
+  });
+
+  updateList();
+}
+
+function renderProductDetails() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const product = products.find(p => p.id == id);
+  const container = document.getElementById('product-detail');
+  const whatsappLink = document.getElementById('whatsapp-link');
+
+  if (!product) {
+    container.innerHTML = '<p>Product not found.</p>';
+    return;
+  }
+
+  container.innerHTML = 
+    <div class="col-md-6 text-center">
+      <img src="${product.image}" class="img-fluid rounded shadow" alt="${product.name}" />
+    </div>
+    <div class="col-md-6">
+      <h2>${product.name}</h2>
+      <p class="text-muted">${product.category.toUpperCase()}</p>
+      <p>${product.description}</p>
+      <h4 class="text-success">$${product.price.toFixed(2)}</h4>
+      <div class="d-flex flex-wrap gap-2 mt-4">
+        <a href="https://wa.me/1234567890?text=I'm%20interested%20in%20${encodeURIComponent(product.name)}" 
+           class="btn btn-success">
+          <i class="bi bi-whatsapp"></i> Buy Now
+        </a>
+        <a href="products.html" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left"></i> Back to Products
+        </a>
+        <button class="btn btn-outline-primary" onclick="shareProduct('${product.name}', '${window.location.href}')">
+          <i class="bi bi-share"></i> Share
+        </button>
+      </div>
+    </div>
+  ;
+
+  whatsappLink.href = https://wa.me/1234567890?text=I'm%20interested%20in%20${encodeURIComponent(product.name)};
+}
+
+function shareProduct(name, url) {
+  if (navigator.share) {
+    navigator.share({ title: name, url: url }).catch(console.error);
+  } else {
+    alert("Sharing not supported on this device.");
+  }
+}
+
+function productCard(product) {
+  return 
+    <div class="card h-100 shadow-sm">
+      <a href="product.html?id=${product.id}" class="text-decoration-none text-dark">
+        <img src="${product.image}" class="card-img-top" alt="${product.name}" />
+        <div class="card-body">
+          <h5 class="card-title">${product.name}</h5>
+          <p class="card-text">$${product.price.toFixed(2)}</p>
+        </div>
+      </a>
+    </div>
+  ;
+}
+
+// Simplified theme toggling based on Bootstrap icon setup
+const toggleBtn = document.getElementById("toggleThemeBtn");
+if (toggleBtn) {
+  const icon = document.getElementById("themeIcon");
+  const htmlTag = document.documentElement;
+
+  const savedTheme = localStorage.getItem("theme") || "light";
+  htmlTag.setAttribute("data-bs-theme", savedTheme);
+  icon.className = savedTheme === "dark" ? "bi bi-sun" : "bi bi-moon";
+
+  toggleBtn.addEventListener("click", () => {
+    const currentTheme = htmlTag.getAttribute("data-bs-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    htmlTag.setAttribute("data-bs-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    icon.className = newTheme === "dark" ? "bi bi-sun" : "bi bi-moon";
+  });
+}
+function renderAllProducts() {
+  const container = document.getElementById('product-list');
+  const spinner = document.getElementById('loading-spinner');
+  const searchBar = document.getElementById('search-bar');
+  const categoryButtons = document.querySelectorAll('.category-btn');
+
+  // Garante que o container existe antes de continuar
+  if (!container || !searchBar || categoryButtons.length === 0) return;
+
+  spinner?.classList.add('d-none');
+
+  function updateList() {
+    let filtered = [...products];
+    const keyword = searchBar.value.toLowerCase();
+    const selected = document.querySelector('.category-btn.active')?.dataset.category;
+
+    if (selected && selected !== 'all') {
+      filtered = filtered.filter(p => p.category === selected);
+    }
+    if (keyword) {
+      filtered = filtered.filter(p => p.name.toLowerCase().includes(keyword));
+    }
+
+    container.innerHTML = '';
+    filtered.forEach(p => {
+      const cardWrapper = document.createElement('div');
+      cardWrapper.className = 'col-md-3 mb-4';
+      cardWrapper.innerHTML = productCard(p);
+      container.appendChild(cardWrapper);
+    });
+  }
+
+  searchBar.addEventListener('input', updateList);
+  categoryButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      categoryButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateList();
+    });
+  });
+
+  updateList();
+}
+function renderProductDetails() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const product = products.find(p => p.id == id);
+  const container = document.getElementById('product-detail');
+  const whatsappLink = document.getElementById('whatsapp-link');
+
+  if (!product) {
+    container.innerHTML = '<p>Product not found.</p>';
+    return;
+  }
+
+  container.innerHTML = 
+    <div class="col-md-6 text-center">
+      <img src="${product.image}" class="img-fluid rounded shadow" alt="${product.name}" />
+    </div>
+    <div class="col-md-6">
+      <h2>${product.name}</h2>
+      <p class="text-muted">${product.category.toUpperCase()}</p>
+      <p>${product.description}</p>
+      <h4 class="text-success">$${product.price.toFixed(2)}</h4>
+      <div class="d-flex flex-wrap gap-2 mt-4">
+        <a href="https://wa.me/1234567890?text=I'm%20interested%20in%20${encodeURIComponent(product.name)}" 
+           class="btn btn-success">
+          <i class="bi bi-whatsapp"></i> Buy via WhatsApp
+        </a>
+        <a href="products.html" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left"></i> Back to Products
+        </a>
+        <button class="btn btn-outline-primary" onclick="shareProduct('${product.name}', '${window.location.href}')">
+          <i class="bi bi-share"></i> Share
+        </button>
+      </div>
+    </div>
+  ;
+
+  whatsappLink.href = https://wa.me/1234567890?text=I'm%20interested%20in%20${encodeURIComponent(product.name)};
+}
+
+function shareProduct(name, url) {
+  if (navigator.share) {
+    navigator.share({ title: name, url: url }).catch(console.error);
+  } else {
+    navigator.clipboard.writeText(url).then(() => {
+      const feedback = document.getElementById('share-feedback');
+      feedback.style.display = 'block';
+      setTimeout(() => feedback.style.display = 'none', 2000);
+    });
+  }
+}
+function truncateText(selector, maxLength) {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach(el => {
+    const originalText = el.textContent.trim();
+
+    if (originalText.length > maxLength) {
+      let truncated = originalText.slice(0, maxLength);
+
+      // Garante que não corte no meio da palavra
+      truncated = truncated.slice(0, truncated.lastIndexOf(' '));
+
+      el.textContent = truncated + '...';
+    }
+  });
+}
+
+// Usar assim, por exemplo, para limitar as descrições que estão na classe .card-text a 150 caracteres
+truncateText('.card-text', 150);
+function truncateText(selector, maxLength) {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach(el => {
+    const originalText = el.textContent.trim();
+    if (originalText.length > maxLength) {
+      let truncated = originalText.slice(0, maxLength);
+      truncated = truncated.slice(0, truncated.lastIndexOf(' '));
+      el.textContent = truncated + '...';
+    }
+  });
+}
+filtered.forEach(product => {
+  productList.appendChild(createProductCard(product));
+});
+
+// Limita a descrição para 100 caracteres (ou o que preferir)
+truncateText('.card-text', 100); -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ about.html - <!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="bg-primary text-white text-center p-4 position-relative">
+    <h1>About Us</h1>
+    <nav class="mt-3">
+      <a href="index.html" class="text-white me-3 text-decoration-none">Home</a>
+      <a href="products.html" class="text-white me-3 text-decoration-none">Products</a>
+      <a href="about.html" class="text-white text-decoration-none">About</a>
+    </nav>
+
+    <!-- Theme Toggle Button -->
+    <button id="toggleThemeBtn" class="btn btn-light position-absolute top-0 end-0 m-3">
+      <i id="themeIcon" class="bi bi-moon"></i>
+    </button>
+  </header>
+
+  <main class="container my-5">
+    <section id="about-content">
+      <h2 class="mb-4">Our Story</h2>
+      <p>We started in <strong>[year]</strong> with the mission to provide the best quality goods to our community. Owned and operated by <strong>[Owner's Name]</strong>.</p>
+      <img src="images/store.jpg" alt="Our Store" class="img-fluid my-4 rounded shadow" />
+      
+      <h3 class="mt-5">Location</h3>
+      <div class="ratio ratio-16x9 mb-4">
+        <iframe src="https://maps.google.com/maps?q=Your+Store+Location&output=embed" allowfullscreen></iframe>
+      </div>
+
+      <h3>Contact</h3>
+      <p>
+        <i class="bi bi-telephone-fill"></i> 123-456-7890<br>
+        <i class="bi bi-whatsapp"></i> <a href="https://wa.me/1234567890" target="_blank">Click to chat</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="bg-light text-center py-3">
+    <p class="mb-0">Thanks for visiting!</p>
+  </footer>
+
+  <!-- Bootstrap JS (optional but good for dropdowns/modals if needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggleThemeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlTag = document.documentElement;
+
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      htmlTag.setAttribute('data-bs-theme', savedTheme);
+      themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlTag.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlTag.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+    });
+  </script>
+</body>
+</html> - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+index.html - <!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Store - Home</title>
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-primary text-white text-center p-4 position-relative">
+    <h1>Home</h1>
+    <nav class="mt-3">
+      <a href="index.html" class="text-white me-3 text-decoration-none">Home</a>
+      <a href="products.html" class="text-white me-3 text-decoration-none">Products</a>
+      <a href="about.html" class="text-white text-decoration-none">About</a>
+    </nav>
+
+    <!-- Theme Toggle Button -->
+    <button id="toggleThemeBtn" class="btn btn-light position-absolute top-0 end-0 m-3">
+      <i id="themeIcon" class="bi bi-moon"></i>
+    </button>
+  </header>
+
+ <!-- Banner with Carousel and Typing -->
+<section id="banner" class="position-relative">
+  <div id="storeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/banner01.jpg" class="d-block w-100" style="max-height: 500px; object-fit: cover;" alt="Slide 1">
+      </div>
+      <div class="carousel-item">
+        <img src="images/banner02.jpg" class="d-block w-100" style="max-height: 500px; object-fit: cover;" alt="Slide 2">
+      </div>
+      <div class="carousel-item">
+        <img src="images/banner03.jpg" class="d-block w-100" style="max-height: 500px; object-fit: cover;" alt="Slide 3">
+      </div>
+      <div class="carousel-item">
+        <img src="images/banner04.jpg" class="d-block w-100" style="max-height: 500px; object-fit: cover;" alt="Slide 4">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#storeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#storeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Typing Overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white bg-dark bg-opacity-50 text-center">
+    <h2 class="display-4 fw-bold">Welcome to My Store</h2>
+    <p class="lead mb-3"><span id="typing-text"></span><span class="typing-cursor">|</span></p>
+    <a href="products.html" class="btn btn-light">Explore Products</a>
+  </div>
+</section>
+
+  <!-- Introduction -->
+  <section id="intro" class="p-4 text-center">
+    <h2>Welcome to My Store</h2>
+    <p>Your go-to shop for the best products in town.</p>
+    <img src="images/store.jpg" class="img-fluid" alt="Our Store" />
+  </section>
+
+  <!-- Top Selling Products -->
+  <section id="top-products" class="p-4">
+    <h2>Top Selling Products</h2>
+    <div class="row" id="top-products-list">
+      <!-- JS will insert product cards here -->
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section id="location" class="p-4">
+    <h2>Find Us</h2>
+    <iframe src="https://maps.google.com/maps?q=Your+Store+Location&output=embed" width="100%" height="300" style="border:0;"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 border-top">
+    <p>
+      Follow us on:
+      <a href="#" class="text-decoration-none"><i class="bi bi-instagram"></i> Instagram</a> |
+      <a href="https://wa.me/1234567890" class="text-decoration-none"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+    </p>
+  </footer>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggleThemeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlTag = document.documentElement;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlTag.setAttribute('data-bs-theme', savedTheme);
+    themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlTag.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlTag.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+    });
+  </script>
+
+<script>
+  const texts = [
+    "Smartphones & Accessories",
+    "Cases, Cables & Chargers",
+    "Keyboards, Mice & Headsets",
+    "Everything for Your Digital Life"
+  ];
+  let count = 0;
+  let index = 0;
+  let currentText = '';
+  let letter = '';
+  const typingText = document.getElementById('typing-text');
+
+  function type() {
+    if (count === texts.length) count = 0;
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    typingText.textContent = letter;
+    if (letter.length === currentText.length) {
+      setTimeout(() => {
+        index = 0;
+        count++;
+        setTimeout(type, 500);
+      }, 2000);
+    } else {
+      setTimeout(type, 100);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', type);
+</script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+- product.html -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ products.html - <!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products - My Store</title>
+
+  <!-- Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Ajustes para cards mantendo seu padrão, sem mexer no CSS principal */
+    .card-img-top {
+      object-fit: cover;
+      height: 200px;
+    }
+    .category-btn.active {
+      background-color: var(--bs-primary);
+      color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-primary text-white text-center p-4 position-relative">
+    <h1>Our Products</h1>
+    <nav class="mt-3">
+      <a href="index.html" class="text-white me-3 text-decoration-none">Home</a>
+      <a href="products.html" class="text-white me-3 text-decoration-none">Products</a>
+      <a href="about.html" class="text-white text-decoration-none">About</a>
+    </nav>
+
+    <!-- Theme Toggle Button -->
+    <button id="toggleThemeBtn" class="btn btn-light position-absolute top-0 end-0 m-3" aria-label="Toggle theme">
+      <i id="themeIcon" class="bi bi-moon"></i>
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <!-- Search Bar -->
+    <section id="search" class="mb-4">
+      <input type="text" id="search-bar" class="form-control" placeholder="Search products..." />
+    </section>
+
+    <!-- Category Filters -->
+    <section id="categories" class="mb-4 text-center">
+      <div class="btn-group" role="group" aria-label="Categories">
+        <button class="btn btn-outline-primary category-btn active" data-category="all">All</button>
+        <button class="btn btn-outline-primary category-btn" data-category="tech">Tech</button>
+        <button class="btn btn-outline-primary category-btn" data-category="fashion">Fashion</button>
+      </div>
+    </section>
+
+    <!-- Product List -->
+    <section id="product-list" class="row g-4">
+      <div id="loading-spinner" class="spinner-border text-primary m-auto" role="status" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-3 border-top">
+    <p class="mb-0">
+      <i class="bi bi-whatsapp"></i>
+      <a href="https://wa.me/1234567890" class="text-decoration-none">Contact us on WhatsApp</a>
+    </p>
+  </footer>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggleThemeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlTag = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlTag.setAttribute('data-bs-theme', savedTheme);
+    themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlTag.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlTag.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+    });
+  </script>
+
+  <!-- Main JS -->
+  <script>
+    const products = [
+      {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "category": "tech",
+        "price": 59.99,
+        "description": "High-quality wireless headphones with noise-cancellation.",
+        "image": "images/products/WirelessHeadphones.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Smart Watch",
+        "category": "tech",
+        "price": 129.99,
+        "description": "Stylish smart watch with fitness tracking and notifications.",
+        "image": "images/products/smartwatch.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Bluetooth Speaker",
+        "category": "tech",
+        "price": 39.99,
+        "description": "Portable speaker with powerful sound and long battery life.",
+        "image": "images/products/speaker.jpg"
+      },
+      {
+        "id": 21,
+        "name": "Wireless Charging Pad",
+        "description": "Fast wireless charger compatible with all Qi-enabled devices.",
+        "price": 79.99,
+        "category": "tech",
+        "image": "images/products/wireless-charger.jpg",
+        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Wireless%20Charging%20Pad"
+      },
+      {
+        "id": 22,
+        "name": "Anti-Spy Screen Protector",
+        "description": "Privacy screen protector for iPhone and Android devices.",
+        "price": 39.99,
+        "category": "tech",
+        "image": "images/products/anti-spy-protector.jpg",
+        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Anti-Spy%20Screen%20Protector"
+      },
+      {
+        "id": 23,
+        "name": "Bluetooth Game Controller",
+        "description": "Compatible with Android, iOS, and PC for mobile gaming.",
+        "price": 149.00,
+        "category": "tech",
+        "image": "images/products/game-controller.jpg",
+        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Bluetooth%20Game%20Controller"
+      },
+      {
+        "id": 24,
+        "name": "USB-C Fast Charging Cable",
+        "description": "1.5m nylon braided cable for quick charging.",
+        "price": 29.90,
+        "category": "tech",
+        "image": "images/products/usb-c-cable.jpg",
+        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20USB-C%20Fast%20Charging%20Cable"
+      },
+      {
+        "id": 25,
+        "name": "RGB Mouse Pad XL",
+        "description": "Extended mouse pad with customizable lighting.",
+        "price": 89.00,
+        "category": "tech",
+        "image": "images/products/rgb-mousepad.jpg",
+        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20RGB%20Mouse%20Pad%20XL"
+      },
+      {
+        "id": 26,
+        "name": "Silicone iPhone 14 Case",
+        "description": "Shockproof silicone case available in multiple colors.",
+        "price": 59.90,
+        "category": "fashion",
+        "image": "images/products/iphone14-case.jpg",
+        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Silicone%20iPhone%2014%20Case"
+      },
+      {
+        "id": 27,
+        "name": "Smartwatch Series 8 Clone",
+        "description": "Affordable smartwatch with fitness tracking features.",
+        "price": 199.00,
+        "category": "tech",
+        "image": "images/products/smartwatch-clone.jpg",
+        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Smartwatch%20Series%208%20Clone"
+      },
+      {
+        "id": 28,
+        "name": "Portable Bluetooth Speaker",
+        "description": "Waterproof, wireless, with deep bass sound.",
+        "price": 129.90,
+        "category": "tech",
+        "image": "images/products/bluetooth-speaker.jpg",
+        "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Portable%20Bluetooth%20Speaker"
+      }
+    ];
+
+    const productList = document.getElementById('product-list');
+    const searchBar = document.getElementById('search-bar');
+    const categoryButtons = document.querySelectorAll('.category-btn');
+
+    let currentCategory = 'all';
+
+    // Função para criar o card de produto
+    function createProductCard(product) {
+      const col = document.createElement('div');
+      col.className = 'col-sm-6 col-md-4 col-lg-3';
+
+      const card = document.createElement('div');
+      card.className = 'card h-100 shadow-sm';
+
+      const img = document.createElement('img');
+      img.src = product.image;
+      img.alt = product.name;
+      img.className = 'card-img-top';
+      card.appendChild(img);
+
+      const cardBody = document.createElement('div');
+      cardBody.className = 'card-body d-flex flex-column';
+
+      const title = document.createElement('h5');
+      title.className = 'card-title';
+      title.textContent = product.name;
+      cardBody.appendChild(title);
+
+      const desc = document.createElement('p');
+      desc.className = 'card-text';
+      desc.textContent = product.description;
+      cardBody.appendChild(desc);
+
+      const price = document.createElement('p');
+      price.className = 'mt-auto fw-bold';
+      price.textContent = €${product.price.toFixed(2)};
+      cardBody.appendChild(price);
+
+      if (product.whatsapp) {
+        const waLink = document.createElement('a');
+        waLink.href = product.whatsapp;
+        waLink.target = '_blank';
+        waLink.rel = 'noopener noreferrer';
+        waLink.className = 'btn btn-success w-100 mt-2';
+        waLink.innerHTML = '<i class="bi bi-whatsapp"></i> Contact via WhatsApp';
+        cardBody.appendChild(waLink);
+      }
+
+      card.appendChild(cardBody);
+      col.appendChild(card);
+
+      return col;
+    }
+
+    // Função para renderizar produtos de acordo com filtro e busca
+    function renderProducts() {
+      productList.innerHTML = '';
+      document.getElementById('loading-spinner').style.display = 'none';
+
+      const searchTerm = searchBar.value.toLowerCase();
+
+      const filtered = products.filter(product => {
+        const matchCategory = currentCategory === 'all' || product.category === currentCategory;
+        const matchSearch = product.name.toLowerCase().includes(searchTerm) || product.description.toLowerCase().includes(searchTerm);
+        return matchCategory && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        productList.innerHTML = '<p class="text-center fs-5">No products found.</p>';
+        return;
+      }
+
+      filtered.forEach(product => {
+        productList.appendChild(createProductCard(product));
+      });
+    }
+
+    // Event listeners
+    searchBar.addEventListener('input', () => {
+      renderProducts();
+    });
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.getAttribute('data-category');
+        renderProducts();
+      });
+    });
+
+    // Inicializa a página
+    window.addEventListener('load', () => {
+      document.getElementById('loading-spinner').style.display = 'none';
+      renderProducts();
+    });
+  </script>
+</body>
+</html>
+- products.json - [
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "category": "tech",
+    "price": 59.99,
+    "description": "High-quality wireless headphones with noise-cancellation.",
+    "image": "images/products/WirelessHeadphones.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "category": "tech",
+    "price": 129.99,
+    "description": "Stylish smart watch with fitness tracking and notifications.",
+    "image": "images/products/smartwatch.jpg"
+  },
+
+  {
+    "id": 5,
+    "name": "Bluetooth Speaker",
+    "category": "tech",
+    "price": 39.99,
+    "description": "Portable speaker with powerful sound and long battery life.",
+    "image": "images/products/speaker.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Wireless Charging Pad",
+    "description": "Fast wireless charger compatible with all Qi-enabled devices.",
+    "price": 79.99,
+    "category": "tech",
+    "image": "images/products/wireless-charger.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Wireless%20Charging%20Pad"
+  },
+  {
+    "id": 22,
+    "name": "Anti-Spy Screen Protector",
+    "description": "Privacy screen protector for iPhone and Android devices.",
+    "price": 39.99,
+    "category": "tech",
+    "image": "images/products/anti-spy-protector.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Anti-Spy%20Screen%20Protector"
+  },
+  {
+    "id": 23,
+    "name": "Bluetooth Game Controller",
+    "description": "Compatible with Android, iOS, and PC for mobile gaming.",
+    "price": 149.00,
+    "category": "tech",
+    "image": "images/products/game-controller.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Bluetooth%20Game%20Controller"
+  },
+  {
+    "id": 24,
+    "name": "USB-C Fast Charging Cable",
+    "description": "1.5m nylon braided cable for quick charging.",
+    "price": 29.90,
+    "category": "tech",
+    "image": "images/products/usb-c-cable.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20USB-C%20Fast%20Charging%20Cable"
+  },
+  {
+    "id": 25,
+    "name": "RGB Mouse Pad XL",
+    "description": "Extended mouse pad with customizable lighting.",
+    "price": 89.00,
+    "category": "tech",
+    "image": "images/products/rgb-mousepad.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20RGB%20Mouse%20Pad%20XL"
+  },
+  {
+    "id": 26,
+    "name": "Silicone iPhone 14 Case",
+    "description": "Shockproof silicone case available in multiple colors.",
+    "price": 59.90,
+    "category": "fashion",
+    "image": "images/products/iphone14-case.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Silicone%20iPhone%2014%20Case"
+  },
+  {
+    "id": 27,
+    "name": "Smartwatch Series 8 Clone",
+    "description": "Affordable smartwatch with fitness tracking features.",
+    "price": 199.00,
+    "category": "tech",
+    "image": "images/products/smartwatch-clone.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Smartwatch%20Series%208%20Clone"
+  },
+  {
+    "id": 28,
+    "name": "Portable Bluetooth Speaker",
+    "description": "Waterproof, wireless, with deep bass sound.",
+    "price": 129.90,
+    "category": "tech",
+    "image": "images/products/bluetooth-speaker.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Portable%20Bluetooth%20Speaker"
+  },
+  {
+    "id": 29,
+    "name": "Foldable Phone Stand",
+    "description": "Adjustable angle stand for desk or travel use.",
+    "price": 24.90,
+    "category": "tech",
+    "image": "images/products/phone-stand.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Foldable%20Phone%20Stand"
+  },
+  {
+    "id": 30,
+    "name": "Ergonomic Wireless Mouse",
+    "description": "Rechargeable mouse designed for all-day comfort.",
+    "price": 89.00,
+    "category": "tech",
+    "image": "images/products/wireless-mouse.jpg",
+    "whatsapp": "https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Ergonomic%20Wireless%20Mouse"
+  }
+]
+-  
