@@ -67,7 +67,7 @@
   <footer class="bg-light text-center py-3 border-top">
     <p class="mb-0">
       <i class="bi bi-whatsapp"></i>
-      <a href="https://wa.me/1234567890" class="text-decoration-none">Contact us on WhatsApp</a>
+      <a href="https://wa.me/+330759237844" class="text-decoration-none">Contact us on WhatsApp</a>
     </p>
   </footer>
 
@@ -93,331 +93,163 @@
     });
   </script>
 
+
   <script>
-    const products = [
-      {
-    "id": 1,
-    "name": "AirPods",
-    "description": "Écouteurs sans fil avec qualité sonore exceptionnelle.",
-    "price": 159.90,
-    "category": "tech",
-    "images": ["images/products/airpods.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20les%20AirPods"
-  },
-  {
-    "id": 2,
-    "name": "JBL Flip 6",
-    "description": "Enceinte Bluetooth portable avec basses puissantes.",
-    "price": 149.90,
-    "category": "tech",
-    "images": [
-      "images/products/jbl_flip6.jpeg",
-      "images/products/jbl_flip6(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20JBL%20Flip%206"
-  },
-  {
-    "id": 3,
-    "name": "Câble USB-C renforcé",
-    "description": "Câble de charge rapide, durable et flexible.",
-    "price": 19.90,
-    "category": "tech",
-    "images": ["images/products/cable_c_C.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C"
-  },
-  {
-    "id": 4,
-    "name": "Câble USB-C tressé",
-    "description": "Câble de type C avec gaine tressée anti-nœud.",
-    "price": 24.90,
-    "category": "tech",
-    "images": ["images/products/cable_c_li.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C%20tressé"
-  },
-  {
-    "id": 5,
-    "name": "JBL Pure Bass",
-    "description": "Écouteurs JBL avec son Pure Bass et design confortable.",
-    "price": 89.90,
-    "category": "tech",
-    "images": [
-      "images/products/jbl_purebass.jpeg",
-      "images/products/jbl_purebass(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20les%20JBL%20Pure%20Bass"
-  },
-  {
-    "id": 6,
-    "name": "Chargeur allume-cigare",
-    "description": "Charge rapide pour vos appareils en voiture.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/car_charger.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20chargeur%20allume-cigare"
-  },
-  {
-    "id": 7,
-    "name": "Coque A06",
-    "description": "Coque souple et élégante pour Samsung A06.",
-    "price": 34.90,
-    "category": "fashion",
-    "images": ["images/products/case_A06.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20A06"
-  },
-  {
-    "id": 8,
-    "name": "Coque A16",
-    "description": "Protection résistante pour votre Samsung A16.",
-    "price": 34.90,
-    "category": "fashion",
-    "images": [
-      "images/products/case_A16.jpeg",
-      "images/products/case_A16(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20A16"
-  },
-  {
-    "id": 9,
-    "name": "Support Ramdon",
-    "description": "Support pliable pour smartphone, pratique au quotidien.",
-    "price": 19.90,
-    "category": "tech",
-    "images": ["images/products/ramdon.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20support%20Ramdon"
-  },
-  {
-    "id": 10,
-    "name": "Support Rider",
-    "description": "Support pour vélo/moto avec fixation sécurisée.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/rider.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20support%20Rider"
-  },
-  {
-    "id": 11,
-    "name": "Coque iPhone 13 Mini",
-    "description": "Coque fine et résistante pour iPhone 13 Mini.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_ip13mini.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2013%20Mini"
-  },
-  {
-    "id": 12,
-    "name": "Coque iPhone 16 Pro",
-    "description": "Protection complète avec design premium pour iPhone 16 Pro.",
-    "price": 44.90,
-    "category": "fashion",
-    "images": ["images/products/case_ip16pro.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2016%20Pro"
-  },
-  {
-    "id": 13,
-    "name": "Verre trempé (avant et arrière)",
-    "description": "Set complet de protection avant et arrière en verre trempé.",
-    "price": 14.90,
-    "category": "tech",
-    "images": [
-      "images/products/tempered_glass.jpeg",
-      "images/products/tempered_glass_back.jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20le%20verre%20trempé%20avant%20et%20arrière"
-  },
-  {
-    "id": 14,
-    "name": "Coque Huawei P30",
-    "description": "Coque protectrice pour Huawei P30.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_p30.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Huawei%20P30"
-  },
-  {
-    "id": 15,
-    "name": "Chargeur Type-C",
-    "description": "Adaptateur secteur avec port USB Type-C.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/typec-charger.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20le%20chargeur%20Type-C"
-  },
-  {
-    "id": 16,
-    "name": "Coque Galaxy Z Fold",
-    "description": "Coque renforcée pour Galaxy Z Fold, protection intégrale.",
-    "price": 49.90,
-    "category": "fashion",
-    "images": ["images/products/case_zfold.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Z%20Fold"
-  },
-  {
-    "id": 17,
-    "name": "Souris sans fil",
-    "description": "Souris ergonomique, idéale pour le bureau et les jeux.",
-    "price": 59.90,
-    "category": "tech",
-    "images": ["images/products/wireless_mouse.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20souris%20sans%20fil"
-  },
-  {
-    "id": 18,
-    "name": "Coque Magico",
-    "description": "Coque élégante avec finition brillante.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_magic6"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Magico"
-  }
-    ];
+  const productsGrid = document.getElementById('productsGrid');
+  const loadingSpinner = document.getElementById('loadingSpinner');
+  const searchInput = document.getElementById('searchInput');
+  const categorySelect = document.getElementById('categorySelect');
+  const pagination = document.getElementById('pagination');
 
-    const productsGrid = document.getElementById('productsGrid');
-    const loadingSpinner = document.getElementById('loadingSpinner');
-    const searchInput = document.getElementById('searchInput');
-    const categorySelect = document.getElementById('categorySelect');
-    const pagination = document.getElementById('pagination');
+  const PRODUCTS_PER_PAGE = 10;
+  let currentPage = 1;
+  let products = [];
+  let filteredProducts = [];
 
-    const PRODUCTS_PER_PAGE = 10;
-    let currentPage = 1;
-    let filteredProducts = [...products];
-
-    function createProductCard(product) {
-      const col = document.createElement('div');
-      col.className = 'col-sm-6 col-md-4 col-lg-3';
-
-      const card = document.createElement('div');
-      card.className = 'card h-100 shadow-sm';
-
-      const img = document.createElement('img');
-      img.src = product.images[0];  // Aqui pega a primeira imagem da lista
-      img.alt = product.name;
-      img.className = 'card-img-top';
-      card.appendChild(img);
-
-      const cardBody = document.createElement('div');
-      cardBody.className = 'card-body d-flex flex-column';
-
-      const title = document.createElement('h5');
-      title.className = 'card-title';
-      title.textContent = product.name;
-      cardBody.appendChild(title);
-
-      const desc = document.createElement('p');
-      desc.className = 'card-text';
-      desc.textContent = product.description;
-      cardBody.appendChild(desc);
-
-      const price = document.createElement('p');
-      price.className = 'mt-auto fw-bold';
-      price.textContent = `€${product.price.toFixed(2)}`;
-      cardBody.appendChild(price);
-
-      const detailsLink = document.createElement('a');
-      detailsLink.href = `product.html?id=${product.id}`;
-      detailsLink.className = 'btn btn-primary w-100 mt-2';
-      detailsLink.textContent = 'View Details';
-      cardBody.appendChild(detailsLink);
-
-      card.appendChild(cardBody);
-      col.appendChild(card);
-
-      return col;
-    }
-
-    function renderProducts() {
-      productsGrid.innerHTML = '';
+  async function loadProducts() {
+    loadingSpinner.style.display = 'block';
+    try {
+      const response = await fetch('products.json');
+      if (!response.ok) throw new Error('Failed to fetch products');
+      products = await response.json();
+      filteredProducts = [...products];
+      filterProducts(); // Inicializa com os produtos carregados
+    } catch (error) {
+      console.error('Error loading products:', error);
+      productsGrid.innerHTML = '<p class="text-center text-danger">Failed to load products.</p>';
+    } finally {
       loadingSpinner.style.display = 'none';
-
-      const start = (currentPage - 1) * PRODUCTS_PER_PAGE;
-      const end = start + PRODUCTS_PER_PAGE;
-      const pageProducts = filteredProducts.slice(start, end);
-
-      if (pageProducts.length === 0) {
-        productsGrid.innerHTML = '<p class="text-center">No products found.</p>';
-        pagination.innerHTML = '';
-        return;
-      }
-
-      pageProducts.forEach(product => {
-        const card = createProductCard(product);
-        productsGrid.appendChild(card);
-      });
-
-      renderPagination();
     }
+  }
 
-    function renderPagination() {
+  function createProductCard(product) {
+    const col = document.createElement('div');
+    col.className = 'col-sm-6 col-md-4 col-lg-3';
+
+    const card = document.createElement('div');
+    card.className = 'card h-100 shadow-sm';
+
+    const img = document.createElement('img');
+    img.src = product.images[0];
+    img.alt = product.name;
+    img.className = 'card-img-top';
+    card.appendChild(img);
+
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body d-flex flex-column';
+
+    const title = document.createElement('h5');
+    title.className = 'card-title';
+    title.textContent = product.name;
+    cardBody.appendChild(title);
+
+    const desc = document.createElement('p');
+    desc.className = 'card-text';
+    desc.textContent = product.brief;
+    cardBody.appendChild(desc);
+
+    const price = document.createElement('p');
+    price.className = 'mt-auto fw-bold';
+    price.textContent = `€${product.price.toFixed(2)}`;
+    cardBody.appendChild(price);
+
+    const detailsLink = document.createElement('a');
+    detailsLink.href = `product.html?id=${product.id}`;
+    detailsLink.className = 'btn btn-primary w-100 mt-2';
+    detailsLink.textContent = 'View Details';
+    cardBody.appendChild(detailsLink);
+
+    card.appendChild(cardBody);
+    col.appendChild(card);
+
+    return col;
+  }
+
+  function renderProducts() {
+    productsGrid.innerHTML = '';
+    const start = (currentPage - 1) * PRODUCTS_PER_PAGE;
+    const end = start + PRODUCTS_PER_PAGE;
+    const pageProducts = filteredProducts.slice(start, end);
+
+    if (pageProducts.length === 0) {
+      productsGrid.innerHTML = '<p class="text-center">No products found.</p>';
       pagination.innerHTML = '';
-      const pageCount = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
-
-      if (pageCount <= 1) return;
-
-      const prevLi = document.createElement('li');
-      prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
-      prevLi.innerHTML = `<a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>`;
-      prevLi.addEventListener('click', e => {
-        e.preventDefault();
-        if (currentPage > 1) {
-          currentPage--;
-          renderProducts();
-        }
-      });
-      pagination.appendChild(prevLi);
-
-      for (let i = 1; i <= pageCount; i++) {
-        const li = document.createElement('li');
-        li.className = `page-item ${i === currentPage ? 'active' : ''}`;
-        li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
-        li.addEventListener('click', e => {
-          e.preventDefault();
-          currentPage = i;
-          renderProducts();
-        });
-        pagination.appendChild(li);
-      }
-
-      const nextLi = document.createElement('li');
-      nextLi.className = `page-item ${currentPage === pageCount ? 'disabled' : ''}`;
-      nextLi.innerHTML = `<a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>`;
-      nextLi.addEventListener('click', e => {
-        e.preventDefault();
-        if (currentPage < pageCount) {
-          currentPage++;
-          renderProducts();
-        }
-      });
-      pagination.appendChild(nextLi);
+      return;
     }
 
-    function filterProducts() {
-      const searchTerm = searchInput.value.trim().toLowerCase();
-      const category = categorySelect.value;
-
-      filteredProducts = products.filter(product => {
-        const matchesSearch =
-          product.name.toLowerCase().includes(searchTerm) ||
-          product.description.toLowerCase().includes(searchTerm);
-
-        const matchesCategory = category === 'all' || product.category === category;
-
-        return matchesSearch && matchesCategory;
-      });
-
-      currentPage = 1;
-      renderProducts();
-    }
-
-    searchInput.addEventListener('input', filterProducts);
-    categorySelect.addEventListener('change', filterProducts);
-
-    // Inicializa exibindo todos produtos
-    window.addEventListener('load', () => {
-      loadingSpinner.style.display = 'block';
-      setTimeout(() => { // Simula loading
-        filterProducts();
-        loadingSpinner.style.display = 'none';
-      }, 500);
+    pageProducts.forEach(product => {
+      const card = createProductCard(product);
+      productsGrid.appendChild(card);
     });
-  </script>
+
+    renderPagination();
+  }
+
+  function renderPagination() {
+    pagination.innerHTML = '';
+    const pageCount = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
+    if (pageCount <= 1) return;
+
+    const prevLi = document.createElement('li');
+    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    prevLi.innerHTML = `<a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>`;
+    prevLi.addEventListener('click', e => {
+      e.preventDefault();
+      if (currentPage > 1) {
+        currentPage--;
+        renderProducts();
+      }
+    });
+    pagination.appendChild(prevLi);
+
+    for (let i = 1; i <= pageCount; i++) {
+      const li = document.createElement('li');
+      li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+      li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+      li.addEventListener('click', e => {
+        e.preventDefault();
+        currentPage = i;
+        renderProducts();
+      });
+      pagination.appendChild(li);
+    }
+
+    const nextLi = document.createElement('li');
+    nextLi.className = `page-item ${currentPage === pageCount ? 'disabled' : ''}`;
+    nextLi.innerHTML = `<a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>`;
+    nextLi.addEventListener('click', e => {
+      e.preventDefault();
+      if (currentPage < pageCount) {
+        currentPage++;
+        renderProducts();
+      }
+    });
+    pagination.appendChild(nextLi);
+  }
+
+  function filterProducts() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const category = categorySelect.value;
+
+    filteredProducts = products.filter(product => {
+      const matchesSearch =
+        product.name.toLowerCase().includes(searchTerm) ||
+        product.brief.toLowerCase().includes(searchTerm);
+
+      const matchesCategory = category === 'all' || product.category === category;
+
+      return matchesSearch && matchesCategory;
+    });
+
+    currentPage = 1;
+    renderProducts();
+  }
+
+  searchInput.addEventListener('input', filterProducts);
+  categorySelect.addEventListener('change', filterProducts);
+
+  window.addEventListener('load', loadProducts);
+</script>
+
 </body>
 </html>

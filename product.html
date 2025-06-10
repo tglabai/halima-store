@@ -2,48 +2,14 @@
 <html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Product Details</title>
 
-  <!-- Styles -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .card img {
-      transition: transform 0.3s ease;
-    }
-    .card:hover img {
-      transform: scale(1.05);
-    }
-    .btn i {
-      transition: transform 0.3s ease;
-    }
-    .btn:hover i {
-      transform: scale(1.2);
-    }
-    .share-feedback {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #198754;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 8px;
-      display: none;
-      z-index: 9999;
-    }
-    .skeleton {
-      background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.2s infinite;
-      border-radius: 10px;
-    }
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/product.css" />
 </head>
 
 <body>
@@ -55,7 +21,9 @@
       <a href="products.html" class="text-white me-3 text-decoration-none">Products</a>
       <a href="about.html" class="text-white text-decoration-none">About</a>
     </nav>
-    <button id="toggleThemeBtn" class="btn btn-light position-absolute top-0 end-0 m-3">
+
+    <!-- Botão de alternar tema -->
+    <button id="toggleThemeBtn" class="btn btn-light position-absolute top-0 end-0 m-3" title="Changer de thème">
       <i id="themeIcon" class="bi bi-moon"></i>
     </button>
   </header>
@@ -74,260 +42,49 @@
     </section>
   </main>
 
-  <!-- Share Feedback -->
-  <div class="share-feedback" id="share-feedback">Link copied!</div>
-
   <!-- Footer -->
   <footer class="text-center py-3 border-top">
     <p>
-      <a id="whatsapp-link" href="#" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
+      <a id="whatsapp-link" href="" class="text-decoration-none d-none" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-whatsapp"></i> Contact us on WhatsApp
       </a>
     </p>
+
+      <p>
+        <i class="bi bi-telephone-fill"></i> +33 07 59 23 78 44<br />
+        <i class="bi bi-whatsapp"></i>
+        <a href="https://wa.me/+330759237844" target="_blank" rel="noopener noreferrer">Click to chat</a>
+      </p>
   </footer>
 
   <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Toggle Theme JS -->
   <script>
-    // Sample product list (keep consistent with your products on products page)
-    const products = [
-   {
-    "id": 1,
-    "name": "AirPods",
-    "description": "Écouteurs sans fil avec qualité sonore exceptionnelle.",
-    "price": 159.90,
-    "category": "tech",
-    "images": ["images/products/airpods.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20les%20AirPods"
-  },
-  {
-    "id": 2,
-    "name": "JBL Flip 6",
-    "description": "Enceinte Bluetooth portable avec basses puissantes.",
-    "price": 149.90,
-    "category": "tech",
-    "images": [
-      "images/products/jbl_flip6.jpeg",
-      "images/products/jbl_flip6(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20JBL%20Flip%206"
-  },
-  {
-    "id": 3,
-    "name": "Câble USB-C renforcé",
-    "description": "Câble de charge rapide, durable et flexible.",
-    "price": 19.90,
-    "category": "tech",
-    "images": ["images/products/cable_c_C.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C"
-  },
-  {
-    "id": 4,
-    "name": "Câble USB-C tressé",
-    "description": "Câble de type C avec gaine tressée anti-nœud.",
-    "price": 24.90,
-    "category": "tech",
-    "images": ["images/products/cable_c_li.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C%20tressé"
-  },
-  {
-    "id": 5,
-    "name": "JBL Pure Bass",
-    "description": "Écouteurs JBL avec son Pure Bass et design confortable.",
-    "price": 89.90,
-    "category": "tech",
-    "images": [
-      "images/products/jbl_purebass.jpeg",
-      "images/products/jbl_purebass(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20les%20JBL%20Pure%20Bass"
-  },
-  {
-    "id": 6,
-    "name": "Chargeur allume-cigare",
-    "description": "Charge rapide pour vos appareils en voiture.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/car_charger.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20chargeur%20allume-cigare"
-  },
-  {
-    "id": 7,
-    "name": "Coque A06",
-    "description": "Coque souple et élégante pour Samsung A06.",
-    "price": 34.90,
-    "category": "fashion",
-    "images": ["images/products/case_A06.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20A06"
-  },
-  {
-    "id": 8,
-    "name": "Coque A16",
-    "description": "Protection résistante pour votre Samsung A16.",
-    "price": 34.90,
-    "category": "fashion",
-    "images": [
-      "images/products/case_A16.jpeg",
-      "images/products/case_A16(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20A16"
-  },
-  {
-    "id": 9,
-    "name": "Support Ramdon",
-    "description": "Support pliable pour smartphone, pratique au quotidien.",
-    "price": 19.90,
-    "category": "tech",
-    "images": ["images/products/ramdon.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20support%20Ramdon"
-  },
-  {
-    "id": 10,
-    "name": "Support Rider",
-    "description": "Support pour vélo/moto avec fixation sécurisée.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/rider.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20support%20Rider"
-  },
-  {
-    "id": 11,
-    "name": "Coque iPhone 13 Mini",
-    "description": "Coque fine et résistante pour iPhone 13 Mini.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_ip13mini.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2013%20Mini"
-  },
-  {
-    "id": 12,
-    "name": "Coque iPhone 16 Pro",
-    "description": "Protection complète avec design premium pour iPhone 16 Pro.",
-    "price": 44.90,
-    "category": "fashion",
-    "images": ["images/products/case_ip16pro.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2016%20Pro"
-  },
-  {
-    "id": 13,
-    "name": "Verre trempé (avant et arrière)",
-    "description": "Set complet de protection avant et arrière en verre trempé.",
-    "price": 14.90,
-    "category": "tech",
-    "images": [
-      "images/products/tempered_glass.jpeg",
-      "images/products/tempered_glass_back.jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20le%20verre%20trempé%20avant%20et%20arrière"
-  },
-  {
-    "id": 14,
-    "name": "Coque Huawei P30",
-    "description": "Coque protectrice pour Huawei P30.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_p30.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Huawei%20P30"
-  },
-  {
-    "id": 15,
-    "name": "Chargeur Type-C",
-    "description": "Adaptateur secteur avec port USB Type-C.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/typec-charger.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20le%20chargeur%20Type-C"
-  },
-  {
-    "id": 16,
-    "name": "Coque Galaxy Z Fold",
-    "description": "Coque renforcée pour Galaxy Z Fold, protection intégrale.",
-    "price": 49.90,
-    "category": "fashion",
-    "images": ["images/products/case_zfold.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Z%20Fold"
-  },
-  {
-    "id": 17,
-    "name": "Souris sans fil",
-    "description": "Souris ergonomique, idéale pour le bureau et les jeux.",
-    "price": 59.90,
-    "category": "tech",
-    "images": ["images/products/wireless_mouse.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20souris%20sans%20fil"
-  },
-  {
-    "id": 18,
-    "name": "Coque Magico",
-    "description": "Coque élégante avec finition brillante.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_magic6"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Magico"
-  }
-    ];
-
-    // Helper: Get query param by name
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-
-    function loadProduct() {
-      const productId = parseInt(getQueryParam('id'));
-      const product = products.find(p => p.id === productId);
-
-      const container = document.getElementById('product-detail');
-      const whatsappLink = document.getElementById('whatsapp-link');
-
-      if (!product) {
-        container.innerHTML = `<p class="text-danger">Product not found.</p>`;
-        whatsappLink.style.display = 'none';
-        return;
-      }
-
-      container.innerHTML = `
-        <div class="col-md-6">
-          <img src="${product.images[0]}" alt="${product.name}" class="img-fluid rounded shadow" />
-        </div>
-        <div class="col-md-6">
-          <h2>${product.name}</h2>
-          <p class="text-muted text-capitalize">${product.category}</p>
-          <h4 class="text-success mb-3">${product.price.toFixed(2)} €</h4>
-          <p>${product.description}</p>
-          <a href="${product.whatsapp}" target="_blank" class="btn btn-success">
-            <i class="bi bi-whatsapp"></i> Contact us on WhatsApp
-          </a>
-        </div>
-      `;
-
-      // Update WhatsApp footer link as well
-      whatsappLink.href = product.whatsapp;
-      whatsappLink.style.display = 'inline-block';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      loadProduct();
-
-      // Theme toggle logic
-      const toggleBtn = document.getElementById('toggleThemeBtn');
-      const themeIcon = document.getElementById('themeIcon');
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById("toggleThemeBtn");
+      const themeIcon = document.getElementById("themeIcon");
       const htmlTag = document.documentElement;
 
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      htmlTag.setAttribute('data-bs-theme', savedTheme);
-      themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+      const applyTheme = (theme) => {
+        htmlTag.setAttribute("data-bs-theme", theme);
+        localStorage.setItem("theme", theme);
+        themeIcon.className = theme === "dark" ? "bi bi-sun" : "bi bi-moon";
+      };
 
-      toggleBtn.addEventListener('click', () => {
-        const currentTheme = htmlTag.getAttribute('data-bs-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        htmlTag.setAttribute('data-bs-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeIcon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+      const savedTheme = localStorage.getItem("theme") || "light";
+      applyTheme(savedTheme);
+
+      toggleBtn.addEventListener("click", () => {
+        const newTheme = htmlTag.getAttribute("data-bs-theme") === "light" ? "dark" : "light";
+        applyTheme(newTheme);
       });
     });
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Product Script -->
+  <script src="js/product.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

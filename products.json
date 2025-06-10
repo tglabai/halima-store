@@ -1,176 +1,963 @@
 [
-  {
-    "id": 1,
-    "name": "AirPods",
-    "description": "Écouteurs sans fil avec qualité sonore exceptionnelle.",
-    "price": 159.90,
-    "category": "tech",
-    "images": ["images/products/airpods.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20les%20AirPods"
+ {
+  "id": 1,
+  "name": "AirPods",
+  "brief": "Écouteurs sans fil Apple avec son clair, autonomie longue durée et commande vocale.",
+  "description": "Les AirPods d'Apple offrent une expérience audio sans fil inégalée grâce à leur design ergonomique et leur technologie avancée. Profitez d'un son clair, équilibré et puissant avec une excellente isolation phonique. Dotés de la puce H1, ils permettent une connexion rapide et stable à tous vos appareils Apple, ainsi que la prise en charge de la commande vocale 'Dis Siri' pour un contrôle mains libres. Leur autonomie exceptionnelle vous garantit jusqu'à 5 heures d'écoute continue, avec un étui de chargement compact qui offre plus de 24 heures d'autonomie supplémentaire. Faciles à transporter, ils s'adaptent parfaitement à toutes les oreilles et se connectent automatiquement dès que vous les sortez de leur étui. Idéals pour la musique, les appels téléphoniques, les podcasts et les jeux, les AirPods sont le compagnon audio parfait pour votre vie quotidienne.",
+  "price": 159.90,
+  "category": "tech",
+  "images": [
+    "images/products/airpods.jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20les%20AirPods",
+  "features": [
+    "Connexion sans fil stable avec puce H1",
+    "Commande vocale 'Dis Siri' pour un contrôle mains libres",
+    "Autonomie jusqu'à 5 heures d'écoute continue",
+    "Étui de chargement compact avec plus de 24 heures d'autonomie",
+    "Design ergonomique et confortable",
+    "Excellente isolation phonique"
+  ],
+  "specifications": {
+    "connectivity": "Bluetooth 5.0",
+    "battery_life": "Jusqu'à 5 heures d'écoute, 24 heures avec étui",
+    "weight": "4 g par écouteur",
+    "charging_case": "Charge filaire et sans fil",
+    "compatibility": "iOS, iPadOS, macOS, watchOS"
   },
-  {
-    "id": 2,
-    "name": "JBL Flip 6",
-    "description": "Enceinte Bluetooth portable avec basses puissantes.",
-    "price": 149.90,
-    "category": "tech",
-    "images": [
-      "images/products/jbl_flip6.jpeg",
-      "images/products/jbl_flip6(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20JBL%20Flip%206"
+  "stock": 75,
+  "rating": 4.8,
+  "reviews": [
+    {
+      "user": "Sophie L.",
+      "comment": "Un son cristallin et une connexion très fiable. Je les adore pour les appels et la musique.",
+      "rating": 5
+    },
+    {
+      "user": "Antoine M.",
+      "comment": "Confortables et très pratiques avec la commande vocale. La batterie tient bien.",
+      "rating": 4
+    }
+  ]
+}
+
+
+,
+ {
+  "id": 2,
+  "name": "JBL Flip 6",
+  "brief": "Enceinte Bluetooth puissante et portable avec basses profondes et design résistant à l’eau.",
+  "description": "La JBL Flip 6 est une enceinte Bluetooth portable conçue pour offrir un son puissant et clair partout où vous allez. Avec ses basses profondes et percutantes grâce à la technologie JBL Original Pro Sound, cette enceinte compacte garantit une expérience audio immersive, que ce soit pour écouter de la musique en intérieur ou en extérieur. Son design robuste et étanche (IP67) la protège contre l'eau et la poussière, parfaite pour les aventures en plein air, la plage ou la piscine. La batterie longue durée offre jusqu'à 12 heures d'écoute sans interruption, et la connectivité Bluetooth 5.1 assure une connexion stable et rapide avec vos appareils. Facile à transporter grâce à sa taille compacte et son poids léger, la JBL Flip 6 est idéale pour les amateurs de musique nomades qui ne veulent pas faire de compromis sur la qualité sonore.",
+  "price": 149.90,
+  "category": "tech",
+  "images": [
+    "images/products/jbl_flip6.jpeg",
+    "images/products/jbl_flip6(2).jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20la%20JBL%20Flip%206",
+  "features": [
+    "Son puissant avec basses profondes",
+    "Technologie JBL Original Pro Sound",
+    "Résistance à l'eau et à la poussière IP67",
+    "Autonomie jusqu'à 12 heures",
+    "Connectivité Bluetooth 5.1 stable",
+    "Design compact et léger, facile à transporter"
+  ],
+  "specifications": {
+    "battery_life": "Jusqu'à 12 heures",
+    "water_resistance": "Norme IP67 (étanche et résistant à la poussière)",
+    "bluetooth_version": "Bluetooth 5.1",
+    "weight": "540 g",
+    "dimensions": "22.1 x 8.7 x 9.4 cm"
   },
-  {
-    "id": 3,
-    "name": "Câble USB-C renforcé",
-    "description": "Câble de charge rapide, durable et flexible.",
-    "price": 19.90,
-    "category": "tech",
-    "images": ["images/products/cable_c_C.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C"
+  "stock": 85,
+  "rating": 4.6,
+  "reviews": [
+    {
+      "user": "Emma T.",
+      "comment": "Son incroyable pour une enceinte portable, parfait pour mes sorties à la plage.",
+      "rating": 5
+    },
+    {
+      "user": "Julien P.",
+      "comment": "Bonne autonomie et très pratique, mais j'aurais aimé un son un peu plus puissant.",
+      "rating": 4
+    }
+  ]
+}
+
+,
+ {
+  "id": 3,
+  "name": "Câble USB-C renforcé",
+  "brief": "Câble de charge rapide, durable et flexible." ,
+  "description": "Ce câble USB-C renforcé est conçu pour répondre aux besoins des utilisateurs exigeants en matière de charge et de transfert de données. Grâce à sa construction robuste avec une gaine tressée résistante à l’usure, il offre une durabilité exceptionnelle tout en restant flexible pour une utilisation confortable au quotidien. Compatible avec la majorité des appareils modernes équipés de ports USB-C, ce câble supporte la charge rapide jusqu’à 3A et assure un transfert de données fiable et rapide. Idéal pour recharger smartphones, tablettes, ordinateurs portables et autres accessoires, il est un incontournable pour garantir performance et longévité, même dans les conditions d’utilisation les plus intenses.",
+  "price": 19.90,
+  "category": "tech",
+  "images": [
+    "images/products/cable_c_C.jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C",
+  "features": [
+    "Charge rapide jusqu’à 3A",
+    "Gaine tressée résistante à l’usure",
+    "Compatible avec la majorité des appareils USB-C",
+    "Transfert de données rapide et fiable",
+    "Flexible et durable"
+  ],
+  "specifications": {
+    "longueur": "1.2 mètres",
+    "connecteurs": "USB-C vers USB-C",
+    "couleur": "Noir",
+    "matériau": "Nylon tressé renforcé"
   },
-  {
-    "id": 4,
-    "name": "Câble USB-C tressé",
-    "description": "Câble de type C avec gaine tressée anti-nœud.",
-    "price": 24.90,
-    "category": "tech",
-    "images": ["images/products/cable_c_li.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C%20tressé"
+  "stock": 120,
+  "rating": 4.7,
+  "reviews": [
+    {
+      "user": "Marie D.",
+      "comment": "Très bon câble, solide et fonctionne parfaitement avec mon smartphone.",
+      "rating": 5
+    },
+    {
+      "user": "Lucas F.",
+      "comment": "La charge est rapide et la longueur est parfaite pour mon bureau.",
+      "rating": 4
+    }
+  ]
+}
+
+,{
+  "id": 4,
+  "name": "Câble USB-C tressé",
+  "brief": "Câble de type C avec gaine tressée anti-nœud.",
+  "description": "Ce câble USB-C tressé est spécialement conçu pour offrir une résistance optimale grâce à sa gaine anti-nœud en nylon. Durable et flexible, il assure une charge rapide et un transfert de données efficace, tout en évitant les enchevêtrements fréquents des câbles classiques. Compatible avec la majorité des appareils modernes équipés de ports USB-C, ce câble est idéal pour une utilisation quotidienne à la maison, au bureau ou en déplacement.",
+  "price": 24.90,
+  "category": "tech",
+  "images": [
+    "images/products/cable_c_li.jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20le%20câble%20USB-C%20tressé",
+  "features": [
+    "Gaine tressée anti-nœud en nylon",
+    "Charge rapide et transfert de données fiable",
+    "Compatible avec la majorité des appareils USB-C",
+    "Durable et flexible",
+    "Longueur idéale pour une utilisation quotidienne"
+  ],
+  "specifications": {
+    "longueur": "1.5 mètres",
+    "connecteurs": "USB-C vers USB-C",
+    "couleur": "Noir",
+    "matériau": "Nylon tressé"
   },
+  "stock": 95,
+  "rating": 4.5,
+  "reviews": [
+    {
+      "user": "Sophie M.",
+      "comment": "Très pratique, le câble ne s'emmêle jamais, et la qualité est au rendez-vous.",
+      "rating": 5
+    },
+    {
+      "user": "Antoine L.",
+      "comment": "Bonne longueur et charge rapide, parfait pour mon usage quotidien.",
+      "rating": 4
+    }
+  ]
+}
+,
   {
-    "id": 5,
-    "name": "JBL Pure Bass",
-    "description": "Écouteurs JBL avec son Pure Bass et design confortable.",
-    "price": 89.90,
-    "category": "tech",
-    "images": [
-      "images/products/jbl_purebass.jpeg",
-      "images/products/jbl_purebass(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20les%20JBL%20Pure%20Bass"
+  "id": 5,
+  "name": "JBL Pure Bass",
+  "brief": "Écouteurs JBL avec son Pure Bass et design confortable.",
+  "description": "Les écouteurs JBL Pure Bass offrent une expérience sonore immersive avec leur technologie exclusive Pure Bass, garantissant des basses profondes et puissantes sans distorsion. Leur design ergonomique assure un confort optimal pour une écoute prolongée, tandis que leur construction légère facilite le transport. Compatibles avec tous vos appareils Bluetooth, ces écouteurs sont parfaits pour écouter de la musique, passer des appels ou regarder des vidéos en déplacement. Leur autonomie permet jusqu'à 8 heures d'écoute continue, et ils sont équipés d'un étui de chargement compact pour une recharge rapide et pratique.",
+  "price": 89.90,
+  "category": "tech",
+  "images": [
+    "images/products/jbl_purebass.jpeg",
+    "images/products/jbl_purebass(2).jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20les%20JBL%20Pure%20Bass",
+  "features": [
+    "Technologie Pure Bass pour des basses profondes",
+    "Design ergonomique et confortable",
+    "Connectivité Bluetooth universelle",
+    "Autonomie jusqu'à 8 heures",
+    "Étui de chargement compact et portable"
+  ],
+  "specifications": {
+    "autonomie": "8 heures d'écoute continue",
+    "connectivité": "Bluetooth 5.0",
+    "poids": "15 grammes",
+    "couleur": "Noir",
+    "compatibilité": "Appareils Bluetooth"
   },
-  {
-    "id": 6,
-    "name": "Chargeur allume-cigare",
-    "description": "Charge rapide pour vos appareils en voiture.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/car_charger.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20chargeur%20allume-cigare"
+  "stock": 75,
+  "rating": 4.6,
+  "reviews": [
+    {
+      "user": "Camille R.",
+      "comment": "Son incroyable pour le prix, très satisfait de ces écouteurs JBL.",
+      "rating": 5
+    },
+    {
+      "user": "Julien T.",
+      "comment": "Confortable et bonne autonomie, parfait pour mes déplacements quotidiens.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 6,
+  "name": "Chargeur allume-cigare",
+  "brief": "Charge rapide pour vos appareils en voiture.",
+  "description": "Chargeur allume-cigare compact et puissant, conçu pour recharger rapidement vos appareils électroniques en voiture. Compatible avec la plupart des smartphones, tablettes et autres appareils USB, il offre une charge rapide et sécurisée grâce à ses protections contre la surcharge, la surchauffe et les courts-circuits. Facile à utiliser et à transporter, c'est l'accessoire idéal pour garder vos appareils chargés lors de vos déplacements en voiture.",
+  "price": 29.90,
+  "category": "tech",
+  "images": ["images/products/car_charger.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20le%20chargeur%20allume-cigare",
+  "features": [
+    "Charge rapide pour appareils USB",
+    "Protections contre surcharge et surchauffe",
+    "Compatible avec la majorité des voitures",
+    "Design compact et léger",
+    "Facile à installer et à utiliser"
+  ],
+  "specifications": {
+    "input": "12-24V DC",
+    "output": "5V/3.4A max",
+    "ports": "2 USB",
+    "color": "Noir",
+    "material": "Plastique ABS"
   },
+  "stock": 90,
+  "rating": 4.5,
+  "reviews": [
+    {
+      "user": "Sophie M.",
+      "comment": "Très pratique et charge vite mes appareils en voiture.",
+      "rating": 5
+    },
+    {
+      "user": "Antoine L.",
+      "comment": "Bon produit, fonctionne bien sur plusieurs modèles de voitures.",
+      "rating": 4
+    }
+  ]
+}
+,
   {
-    "id": 7,
-    "name": "Coque A06",
-    "description": "Coque souple et élégante pour Samsung A06.",
-    "price": 34.90,
-    "category": "fashion",
-    "images": ["images/products/case_A06.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20A06"
+  "id": 7,
+  "name": "Coque A06",
+  "brief": "Coque souple et élégante pour Samsung A06.",
+  "description": "Coque souple, légère et élégante spécialement conçue pour protéger votre Samsung A06 contre les chocs, rayures et chutes. Sa finition mate offre une prise en main confortable tout en conservant un design moderne et discret. Fabriquée avec des matériaux de haute qualité, cette coque assure une protection durable sans ajouter de volume excessif à votre téléphone.",
+  "price": 34.90,
+  "category": "fashion",
+  "images": ["images/products/case_A06.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20la%20coque%20A06",
+  "features": [
+    "Matériau souple et résistant",
+    "Protection contre chocs et rayures",
+    "Design léger et fin",
+    "Accès facile à tous les boutons et ports",
+    "Finition mate anti-traces"
+  ],
+  "specifications": {
+    "compatibility": "Samsung A06",
+    "material": "TPU souple",
+    "color": "Noir",
+    "weight": "25g"
   },
-  {
-    "id": 8,
-    "name": "Coque A16",
-    "description": "Protection résistante pour votre Samsung A16.",
-    "price": 34.90,
-    "category": "fashion",
-    "images": [
-      "images/products/case_A16.jpeg",
-      "images/products/case_A16(2).jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20A16"
+  "stock": 75,
+  "rating": 4.6,
+  "reviews": [
+    {
+      "user": "Camille R.",
+      "comment": "Très bonne protection et très agréable au toucher.",
+      "rating": 5
+    },
+    {
+      "user": "Julien P.",
+      "comment": "S'adapte parfaitement au téléphone et reste fine.",
+      "rating": 4
+    }
+  ]
+}
+,{
+  "id": 8,
+  "name": "Coque A16",
+  "brief": "Protection résistante pour votre Samsung A16.",
+  "description": "Protection résistante et élégante spécialement conçue pour le Samsung A16. Cette coque offre une excellente protection contre les chocs, les rayures et les chutes, tout en conservant un design fin et moderne. Fabriquée en matériau durable, elle assure une prise en main confortable et un accès facile à tous les boutons et ports de votre téléphone.",
+  "price": 34.90,
+  "category": "fashion",
+  "images": [
+    "images/products/case_A16.jpeg",
+    "images/products/case_A16(2).jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20la%20coque%20A16",
+  "features": [
+    "Protection robuste contre les chocs et rayures",
+    "Design fin et léger",
+    "Matériau durable et résistant",
+    "Accès facile à tous les boutons et ports",
+    "Finition anti-traces"
+  ],
+  "specifications": {
+    "compatibility": "Samsung A16",
+    "material": "TPU renforcé",
+    "color": "Noir",
+    "weight": "28g"
   },
-  {
-    "id": 9,
-    "name": "Support Ramdon",
-    "description": "Support pliable pour smartphone, pratique au quotidien.",
-    "price": 19.90,
-    "category": "tech",
-    "images": ["images/products/ramdon.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20support%20Ramdon"
+  "stock": 80,
+  "rating": 4.5,
+  "reviews": [
+    {
+      "user": "Sophie L.",
+      "comment": "Coque très résistante, protège bien le téléphone.",
+      "rating": 5
+    },
+    {
+      "user": "Marc T.",
+      "comment": "Design sympa et bonne prise en main.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 9,
+  "name": "Support Ramdon",
+  "brief":  "Support pliable pour smartphone, pratique au quotidien.",
+  "description": "Support pliable et léger conçu pour maintenir votre smartphone à un angle optimal, idéal pour regarder des vidéos, passer des appels vidéo ou travailler confortablement. Compact et facile à transporter, il se plie rapidement pour se glisser dans n'importe quel sac ou poche. Compatible avec la plupart des smartphones, ce support est un accessoire pratique pour le quotidien.",
+  "price": 19.90,
+  "category": "tech",
+  "images": [
+    "images/products/ramdon.jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20le%20support%20Ramdon",
+  "features": [
+    "Support pliable et compact",
+    "Compatible avec la plupart des smartphones",
+    "Design léger et portable",
+    "Angle de vision optimal",
+    "Matériau durable et antidérapant"
+  ],
+  "specifications": {
+    "material": "Plastique ABS renforcé",
+    "weight": "150g",
+    "dimensions": "10 x 8 x 1.5 cm (plié)",
+    "color": "Noir"
   },
-  {
-    "id": 10,
-    "name": "Support Rider",
-    "description": "Support pour vélo/moto avec fixation sécurisée.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/rider.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20le%20support%20Rider"
+  "stock": 60,
+  "rating": 4.3,
+  "reviews": [
+    {
+      "user": "Claire M.",
+      "comment": "Très pratique et facile à transporter, parfait pour les voyages.",
+      "rating": 5
+    },
+    {
+      "user": "Jean P.",
+      "comment": "Stable et robuste, supporte bien mon smartphone.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 10,
+  "name": "Support Rider",
+  "brief": "Support pour vélo/moto avec fixation sécurisée.",
+  "description": "Support robuste conçu pour fixer solidement votre smartphone sur un vélo ou une moto. Grâce à sa fixation sécurisée et ajustable, il assure une bonne stabilité même sur les terrains accidentés. Facile à installer et compatible avec la plupart des guidons, ce support est idéal pour naviguer, suivre vos parcours ou écouter de la musique en roulant.",
+  "price": 29.90,
+  "category": "tech",
+  "images": [
+    "images/products/rider.jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20le%20support%20Rider",
+  "features": [
+    "Fixation sécurisée et ajustable",
+    "Compatible avec la plupart des guidons",
+    "Conception robuste et durable",
+    "Installation rapide sans outils",
+    "Résistant aux chocs et vibrations"
+  ],
+  "specifications": {
+    "material": "Plastique renforcé et silicone antidérapant",
+    "weight": "200g",
+    "compatibility": "Smartphones jusqu’à 7 pouces",
+    "color": "Noir"
   },
+  "stock": 45,
+  "rating": 4.5,
+  "reviews": [
+    {
+      "user": "Alexandre L.",
+      "comment": "Parfait pour mes sorties en vélo, très stable même sur chemins irréguliers.",
+      "rating": 5
+    },
+    {
+      "user": "Sophie R.",
+      "comment": "Facile à installer et sécurisé, je recommande.",
+      "rating": 4
+    }
+  ]
+}
+,
   {
-    "id": 11,
-    "name": "Coque iPhone 13 Mini",
-    "description": "Coque fine et résistante pour iPhone 13 Mini.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_ip13mini.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2013%20Mini"
+  "id": 11,
+  "name": "Coque iPhone 13 Mini",
+  "brief": "Coque fine et résistante pour iPhone 13 Mini.",
+  "description": "Coque fine, légère et résistante, spécialement conçue pour protéger votre iPhone 13 Mini des chocs, rayures et chutes du quotidien. Son design épuré et élégant conserve la finesse de votre téléphone tout en offrant une excellente prise en main. Compatible avec la recharge sans fil, elle protège efficacement tout en permettant un accès facile à tous les boutons et ports.",
+  "price": 39.90,
+  "category": "fashion",
+  "images": [
+    "images/products/case_ip13mini.jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2013%20Mini",
+  "features": [
+    "Matériau résistant aux chocs",
+    "Design fin et léger",
+    "Compatible recharge sans fil",
+    "Accès facile à tous les boutons et ports",
+    "Finition anti-rayures"
+  ],
+  "specifications": {
+    "material": "Polycarbonate et TPU",
+    "color": "Noir mat",
+    "weight": "25g",
+    "compatibility": "iPhone 13 Mini"
   },
+  "stock": 70,
+  "rating": 4.6,
+  "reviews": [
+    {
+      "user": "Julie M.",
+      "comment": "Très bonne protection, coque légère et agréable au toucher.",
+      "rating": 5
+    },
+    {
+      "user": "Antoine D.",
+      "comment": "Bonne qualité, protège bien sans ajouter trop d'épaisseur.",
+      "rating": 4
+    }
+  ]
+}
+,
   {
-    "id": 12,
-    "name": "Coque iPhone 16 Pro",
-    "description": "Protection complète avec design premium pour iPhone 16 Pro.",
-    "price": 44.90,
-    "category": "fashion",
-    "images": ["images/products/case_ip16pro.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2016%20Pro"
+  "id": 12,
+  "name": "Coque iPhone 16 Pro",
+  "brief": "Protection complète avec design premium pour iPhone 16 Pro.",
+  "description": "Protection complète et élégante spécialement conçue pour l'iPhone 16 Pro. Cette coque premium combine robustesse et finesse pour assurer une défense optimale contre les chocs, rayures et chutes, tout en mettant en valeur le design moderne de votre téléphone. Son revêtement anti-traces de doigts et sa finition mate apportent une touche de sophistication, tout en offrant une prise en main confortable. Compatible avec la recharge sans fil, cette coque est l’accessoire indispensable pour protéger votre iPhone avec style.",
+  "price": 44.90,
+  "category": "fashion",
+  "images": [
+    "images/products/case_ip16pro.jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20suis%20intéressé%20par%20la%20coque%20iPhone%2016%20Pro",
+  "features": [
+    "Protection renforcée contre les chocs",
+    "Finition mate anti-traces de doigts",
+    "Design fin et léger",
+    "Compatible recharge sans fil",
+    "Accès facile aux boutons et ports"
+  ],
+  "specifications": {
+    "material": "Polycarbonate rigide avec cadre TPU",
+    "color": "Noir mat",
+    "weight": "30g",
+    "compatibility": "iPhone 16 Pro"
   },
+  "stock": 50,
+  "rating": 4.8,
+  "reviews": [
+    {
+      "user": "Sophie L.",
+      "comment": "Coque très élégante et protectrice, parfaite pour mon iPhone 16 Pro.",
+      "rating": 5
+    },
+    {
+      "user": "Marc R.",
+      "comment": "Bonne prise en main et facile à installer, protège bien le téléphone.",
+      "rating": 4
+    }
+  ]
+}
+,
   {
-    "id": 13,
-    "name": "Verre trempé (avant et arrière)",
-    "description": "Set complet de protection avant et arrière en verre trempé.",
-    "price": 14.90,
-    "category": "tech",
-    "images": [
-      "images/products/tempered_glass.jpeg",
-      "images/products/tempered_glass_back.jpeg"
-    ],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20le%20verre%20trempé%20avant%20et%20arrière"
+  "id": 13,
+  "name": "Verre trempé (avant et arrière)",
+  "brief":  "Set complet de protection avant et arrière en verre trempé.",
+  "description": "Set complet de protections en verre trempé pour votre smartphone, incluant la face avant et arrière. Ce verre de haute qualité offre une résistance exceptionnelle aux chocs, rayures et impacts, tout en conservant une transparence cristalline et une sensibilité tactile parfaite. Facile à installer grâce à son adhésif sans bulles, il protège efficacement votre écran et le dos de votre appareil contre les dommages quotidiens, tout en préservant son design original.",
+  "price": 14.90,
+  "category": "tech",
+  "images": [
+    "images/products/tempered_glass.jpeg",
+    "images/products/tempered_glass_back.jpeg"
+  ],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20le%20verre%20trempé%20avant%20et%20arrière",
+  "features": [
+    "Protection avant et arrière complète",
+    "Verre trempé ultra-résistant",
+    "Haute transparence et sensibilité tactile",
+    "Installation facile sans bulles",
+    "Résistant aux rayures et impacts"
+  ],
+  "specifications": {
+    "material": "Verre trempé de qualité premium",
+    "compatibility": "Smartphones standards",
+    "thickness": "0.3 mm",
+    "hardness": "9H"
   },
+  "stock": 100,
+  "rating": 4.7,
+  "reviews": [
+    {
+      "user": "Claire M.",
+      "comment": "Très bon rapport qualité-prix, protège bien mon téléphone.",
+      "rating": 5
+    },
+    {
+      "user": "Jean P.",
+      "comment": "Facile à poser, protège parfaitement l’écran et le dos.",
+      "rating": 4
+    }
+  ]
+}
+,
   {
-    "id": 14,
-    "name": "Coque Huawei P30",
-    "description": "Coque protectrice pour Huawei P30.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_p30.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Huawei%20P30"
+  "id": 14,
+  "name": "Coque Huawei P30",
+  "brief": "Coque protectrice pour Huawei P30.",
+  "description": "Coque protectrice en silicone souple et résistante, spécialement conçue pour Huawei P30, offrant une protection optimale contre les chutes, rayures et chocs tout en conservant un design élégant.",
+  "price": 39.90,
+  "category": "fashion",
+  "images": ["images/products/case_p30.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20la%20coque%20Huawei%20P30",
+  "features": [
+    "Protection renforcée contre les chutes et rayures",
+    "Matériau silicone souple et antidérapant",
+    "Découpes précises pour accès facile aux boutons et ports",
+    "Design fin et léger",
+    "Compatible avec Huawei P30"
+  ],
+  "specifications": {
+    "material": "Silicone TPU flexible",
+    "compatibility": "Huawei P30",
+    "weight": "25 g",
+    "dimensions": "15 x 7 x 1 cm"
   },
-  {
-    "id": 15,
-    "name": "Chargeur Type-C",
-    "description": "Adaptateur secteur avec port USB Type-C.",
-    "price": 29.90,
-    "category": "tech",
-    "images": ["images/products/typec-charger.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20le%20chargeur%20Type-C"
+  "stock": 75,
+  "rating": 4.5,
+  "reviews": [
+    {
+      "user": "Sophie L.",
+      "comment": "Bonne protection et prise en main agréable, je recommande.",
+      "rating": 5
+    },
+    {
+      "user": "Marc D.",
+      "comment": "Coque légère mais robuste, parfait pour un usage quotidien.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 15,
+  "name": "Chargeur Type-C",
+  "brief": "Adaptateur secteur avec port USB Type-C.",
+  "description": "Adaptateur secteur compact avec port USB Type-C, idéal pour une charge rapide et sécurisée de vos appareils modernes.",
+  "price": 29.90,
+  "category": "tech",
+  "images": ["images/products/typec-charger.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20le%20chargeur%20Type-C",
+  "features": [
+    "Charge rapide jusqu’à 3A",
+    "Compatible avec la plupart des appareils USB-C",
+    "Protection contre les surtensions et la surchauffe",
+    "Compact et léger, facile à transporter",
+    "Certifié CE et RoHS"
+  ],
+  "specifications": {
+    "input": "100-240V, 50/60Hz",
+    "output": "5V/3A, 9V/2A",
+    "port": "USB Type-C",
+    "dimensions": "5 x 4 x 2.5 cm",
+    "weight": "50 g"
   },
-  {
-    "id": 16,
-    "name": "Coque Galaxy Z Fold",
-    "description": "Coque renforcée pour Galaxy Z Fold, protection intégrale.",
-    "price": 49.90,
-    "category": "fashion",
-    "images": ["images/products/case_zfold.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Z%20Fold"
+  "stock": 120,
+  "rating": 4.6,
+  "reviews": [
+    {
+      "user": "Lucas T.",
+      "comment": "Charge rapide et fiable, parfait pour mon smartphone.",
+      "rating": 5
+    },
+    {
+      "user": "Emma R.",
+      "comment": "Très pratique, fonctionne bien avec ma tablette.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 16,
+  "name": "Coque Galaxy Z Fold",
+  "brief": "Coque renforcée pour Galaxy Z Fold, protection intégrale.",
+    "description": "Coque renforcée offrant une protection intégrale pour votre Samsung Galaxy Z Fold, alliant robustesse et design élégant.",
+  "price": 49.90,
+  "category": "fashion",
+  "images": ["images/products/case_zfold.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20la%20coque%20Z%20Fold",
+  "features": [
+    "Protection renforcée contre les chocs et rayures",
+    "Design fin et léger",
+    "Accès facile à tous les boutons et ports",
+    "Matériau anti-dérapant",
+    "Compatibilité parfaite avec le Galaxy Z Fold"
+  ],
+  "specifications": {
+    "material": "TPU et polycarbonate",
+    "compatibility": "Samsung Galaxy Z Fold",
+    "weight": "35 g",
+    "dimensions": "Compatible avec les dimensions du Galaxy Z Fold"
   },
-  {
-    "id": 17,
-    "name": "Souris sans fil",
-    "description": "Souris ergonomique, idéale pour le bureau et les jeux.",
-    "price": 59.90,
-    "category": "tech",
-    "images": ["images/products/wireless_mouse.jpeg"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20souris%20sans%20fil"
+  "stock": 75,
+  "rating": 4.5,
+  "reviews": [
+    {
+      "user": "Sophie L.",
+      "comment": "Super protection, coque légère et pratique.",
+      "rating": 5
+    },
+    {
+      "user": "Marc D.",
+      "comment": "Bonne qualité, mais un peu épaisse à mon goût.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 17,
+  "name": "Souris sans fil",
+  "brief":  "Souris ergonomique, idéale pour le bureau et les jeux.",
+  "description": "Souris ergonomique, idéale pour le bureau et les jeux, offrant une connexion sans fil fiable et une excellente précision.",
+  "price": 59.90,
+  "category": "tech",
+  "images": ["images/products/wireless_mouse.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20la%20souris%20sans%20fil",
+  "features": [
+    "Connexion sans fil 2.4 GHz",
+    "Design ergonomique confortable",
+    "Haute précision optique 1600 DPI",
+    "Boutons programmables",
+    "Compatible avec Windows et Mac"
+  ],
+  "specifications": {
+    "connectivity": "Sans fil 2.4 GHz",
+    "battery_life": "Jusqu'à 12 mois",
+    "dimensions": "11 x 6.5 x 3.8 cm",
+    "weight": "85 g"
   },
+  "stock": 120,
+  "rating": 4.6,
+  "reviews": [
+    {
+      "user": "Alexandre R.",
+      "comment": "Très bonne autonomie et prise en main confortable.",
+      "rating": 5
+    },
+    {
+      "user": "Laura G.",
+      "comment": "Parfaite pour le travail quotidien, réactive et précise.",
+      "rating": 4
+    }
+  ]
+}
+,
   {
-    "id": 18,
-    "name": "Coque Magico",
-    "description": "Coque élégante avec finition brillante.",
-    "price": 39.90,
-    "category": "fashion",
-    "images": ["images/products/case_magic6"],
-    "whatsapp": "https://wa.me/33751415456?text=Je%20veux%20acheter%20la%20coque%20Magico"
-  }
+  "id": 18,
+  "name": "Coque Magico",
+  "brief":  "Coque élégante avec finition brillante.",
+  "description": "Coque élégante avec finition brillante, offrant une protection légère tout en ajoutant une touche de style à votre smartphone.",
+  "price": 39.90,
+  "category": "fashion",
+  "images": ["images/products/case_magic6.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20la%20coque%20Magico",
+  "features": [
+    "Finition brillante et élégante",
+    "Matériau léger et résistant",
+    "Protection contre les chocs légers",
+    "Accès facile à tous les boutons et ports"
+  ],
+  "specifications": {
+    "material": "Polycarbonate et TPU",
+    "compatibility": "Smartphones standards",
+    "weight": "35 g",
+    "dimensions": "14.5 x 7 x 1 cm"
+  },
+  "stock": 75,
+  "rating": 4.4,
+  "reviews": [
+    {
+      "user": "Marie T.",
+      "comment": "Design très chic, s’adapte parfaitement à mon téléphone.",
+      "rating": 5
+    },
+    {
+      "user": "Lucas V.",
+      "comment": "Bonne protection et aspect brillant très sympa.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 19,
+  "name": "JBL WaveBean",
+  "brief": "Écouteurs Bluetooth avec son puissant et design compact.",
+  "description": "Écouteurs Bluetooth avec son puissant et design compact, parfaits pour une écoute sans fil de haute qualité.",
+  "price": 99.90,
+  "category": "tech",
+  "images": ["images/products/jbl_wavebean.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20les%20JBL%20WaveBean",
+  "features": [
+    "Bluetooth 5.0 pour connexion stable",
+    "Son puissant avec basses profondes",
+    "Design compact et confortable",
+    "Autonomie jusqu'à 8 heures",
+    "Résistance à l'eau IPX4"
+  ],
+  "specifications": {
+    "connectivity": "Bluetooth 5.0",
+    "battery_life": "8 heures",
+    "charging_time": "2 heures",
+    "weight": "50 g",
+    "water_resistance": "IPX4"
+  },
+  "stock": 50,
+  "rating": 4.6,
+  "reviews": [
+    {
+      "user": "Sophie L.",
+      "comment": "Très bons écouteurs, le son est clair et puissant.",
+      "rating": 5
+    },
+    {
+      "user": "Antoine G.",
+      "comment": "Confortables et autonomie correcte, je recommande.",
+      "rating": 4
+    }
+  ]
+}
+,
+  {
+  "id": 20,
+  "name": "Samsung Galaxy A26",
+  "brief": "Smartphone Samsung Galaxy A26 avec écran large et caméra performante.",
+  "description": "Smartphone Samsung Galaxy A26 avec écran large et caméra performante, offrant une expérience fluide et polyvalente.",
+  "price": 229.90,
+  "category": "tech",
+  "images": ["images/products/galaxy_a26.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20le%20Samsung%20Galaxy%20A26",
+  "features": [
+    "Écran large 6.5 pouces",
+    "Caméra arrière 48 MP",
+    "Batterie longue durée 5000 mAh",
+    "Processeur octa-core performant",
+    "Stockage 64 Go extensible"
+  ],
+  "specifications": {
+    "screen": "6.5 pouces, HD+",
+    "camera": "48 MP arrière, 8 MP frontale",
+    "battery": "5000 mAh",
+    "processor": "Octa-core 2.0 GHz",
+    "ram": "4 Go",
+    "storage": "64 Go (extensible via microSD)"
+  },
+  "stock": 30,
+  "rating": 4.5,
+  "reviews": [
+    {
+      "user": "Marc D.",
+      "comment": "Très bon rapport qualité-prix, écran lumineux et bonne autonomie.",
+      "rating": 5
+    },
+    {
+      "user": "Laura S.",
+      "comment": "Caméra correcte, mais aurait pu être meilleure en faible luminosité.",
+      "rating": 4
+    }
+  ]
+}
+,
+  {
+  "id": 21,
+  "name": "Samsung Galaxy A15",
+  "brief": "Smartphone performant avec grande autonomie de batterie.",
+  "description": "Smartphone performant avec grande autonomie de batterie, idéal pour une utilisation quotidienne intensive.",
+  "price": 199.90,
+  "category": "tech",
+  "images": ["images/products/galaxy_a15.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20le%20Samsung%20Galaxy%20A15",
+  "features": [
+    "Batterie longue durée 5000 mAh",
+    "Écran HD+ de 6.4 pouces",
+    "Caméra principale 50 MP",
+    "Processeur Octa-core efficace",
+    "Stockage 64 Go extensible"
+  ],
+  "specifications": {
+    "screen": "6.4 pouces, HD+",
+    "camera": "50 MP arrière, 13 MP frontale",
+    "battery": "5000 mAh",
+    "processor": "Octa-core 2.3 GHz",
+    "ram": "4 Go",
+    "storage": "64 Go (extensible via microSD)"
+  },
+  "stock": 45,
+  "rating": 4.4,
+  "reviews": [
+    {
+      "user": "Sophie L.",
+      "comment": "Excellente autonomie, parfait pour les longues journées.",
+      "rating": 5
+    },
+    {
+      "user": "Antoine R.",
+      "comment": "Bonne performance globale, écran clair et lumineux.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 22,
+  "name": "Samsung Galaxy A06",
+  "brief": "Smartphone économique avec fonctionnalités essentielles.",
+  "description": "Smartphone économique avec fonctionnalités essentielles, idéal pour un usage quotidien simple et efficace.",
+  "price": 149.90,
+  "category": "tech",
+  "images": ["images/products/galaxy_a06.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20le%20Samsung%20Galaxy%20A06",
+  "features": [
+    "Écran HD+ de 6.1 pouces",
+    "Caméra arrière 13 MP",
+    "Batterie 3000 mAh",
+    "Processeur quad-core efficace",
+    "Stockage 32 Go"
+  ],
+  "specifications": {
+    "screen": "6.1 pouces, HD+",
+    "camera": "13 MP arrière, 5 MP frontale",
+    "battery": "3000 mAh",
+    "processor": "Quad-core 1.6 GHz",
+    "ram": "3 Go",
+    "storage": "32 Go (extensible via microSD)"
+  },
+  "stock": 60,
+  "rating": 4.1,
+  "reviews": [
+    {
+      "user": "Marie D.",
+      "comment": "Bon rapport qualité-prix pour un usage basique.",
+      "rating": 4
+    },
+    {
+      "user": "Julien T.",
+      "comment": "Simple et fonctionnel, parfait pour un téléphone secondaire.",
+      "rating": 4
+    }
+  ]
+}
+,
+ {
+  "id": 23,
+  "name": "Honor 200",
+  "brief":  "Smartphone Honor avec excellent rapport qualité-prix.",
+  "description": "Smartphone Honor avec excellent rapport qualité-prix, offrant performance et design moderne.",
+  "price": 179.90,
+  "category": "tech",
+  "images": ["images/products/honor_200.jpeg"], 
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20le%20Honor%20200",
+  "features": [
+    "Écran OLED 6.67 pouces",
+    "Caméra arrière 48 MP",
+    "Batterie 4800 mAh avec charge rapide",
+    "Processeur performant pour multitâche",
+    "Design élégant et fin"
+  ],
+  "specifications": {
+    "screen": "6.67 pouces, OLED, Full HD+",
+    "camera": "48 MP arrière, 8 MP frontale",
+    "battery": "4800 mAh, charge rapide 22.5W",
+    "processor": "MediaTek Dimensity 6020",
+    "ram": "4 Go",
+    "storage": "128 Go"
+  },
+  "stock": 75,
+  "rating": 4.4,
+  "reviews": [
+    {
+      "user": "Sophie L.",
+      "comment": "Très bon téléphone pour le prix, autonomie impressionnante.",
+      "rating": 5
+    },
+    {
+      "user": "Marc B.",
+      "comment": "Écran magnifique et bonne performance générale.",
+      "rating": 4
+    }
+  ]
+}
+,
+  {
+  "id": 24,
+  "name": "Oppo Reno 12",
+  "brief":  "Smartphone Oppo avec design moderne et caméra avancée.",
+  "description": "Smartphone Oppo avec design moderne et caméra avancée, idéal pour les photos et la performance quotidienne.",
+  "price": 249.90,
+  "category": "tech",
+  "images": ["images/products/oppo_reno_12.jpeg"],
+  "whatsapp": "https://wa.me/330759237844?text=Je%20veux%20acheter%20le%20Oppo%20Reno%2012",
+  "features": [
+    "Écran AMOLED 6.43 pouces",
+    "Caméra arrière triple 64 MP",
+    "Batterie longue durée 4500 mAh",
+    "Charge rapide 33W",
+    "Design fin et léger"
+  ],
+  "specifications": {
+    "screen": "6.43 pouces, AMOLED, Full HD+",
+    "camera": "64 MP arrière + 2 capteurs auxiliaires, 32 MP frontale",
+    "battery": "4500 mAh, charge rapide 33W",
+    "processor": "MediaTek Dimensity 6100+",
+    "ram": "8 Go",
+    "storage": "128 Go"
+  },
+  "stock": 50,
+  "rating": 4.6,
+  "reviews": [
+    {
+      "user": "Laura T.",
+      "comment": "Très bon rapport qualité-prix, caméra superbe.",
+      "rating": 5
+    },
+    {
+      "user": "Antoine D.",
+      "comment": "Bonne autonomie et fluide pour les applications quotidiennes.",
+      "rating": 4
+    }
+  ]
+}
+
+
+
+
+
 ]
